@@ -27,7 +27,8 @@ namespace BanDong_1._0v
 
         private void BTN_Login_Click(object sender, EventArgs e)
         {
-
+            Order_Form order = new Order_Form();
+            order.Show();
             using (SqlConnection cn = new SqlConnection(sqlcn))
             {
                 cn.Open();
@@ -35,5 +36,6 @@ namespace BanDong_1._0v
                 cn.Close();
             }
         }
+
     }
 }
