@@ -1,0 +1,28 @@
+<<<<<<< HEAD
+C:\C#\BanDong_1.0v\obj\Debug\BanDong_1.0v.csproj.AssemblyReference.cache
+C:\C#\BanDong_1.0v\obj\Debug\BanDong_1.0v.csproj.SuggestedBindingRedirects.cache
+C:\C#\BanDong_1.0v\obj\Debug\BanDong_1._0v.Properties.Resources.resources
+C:\C#\BanDong_1.0v\obj\Debug\BanDong_1.0v.csproj.GenerateResource.cache
+C:\C#\BanDong_1.0v\obj\Debug\BanDong_1.0v.csproj.CoreCompileInputs.cache
+C:\C#\BanDong_1.0v\bin\Debug\BanDong_1.0v.exe.config
+C:\C#\BanDong_1.0v\bin\Debug\BanDong_1.0v.exe
+C:\C#\BanDong_1.0v\bin\Debug\BanDong_1.0v.pdb
+C:\C#\BanDong_1.0v\obj\Debug\BanDong_1._0v.Login_Form.resources
+C:\C#\BanDong_1.0v\obj\Debug\BanDong_1._0v.Register_Form.resources
+C:\C#\BanDong_1.0v\obj\Debug\BanDong_1.0v.exe
+C:\C#\BanDong_1.0v\obj\Debug\BanDong_1.0v.pdb
+=======
+D:\Csharp\Program\BanDong\BanDong_1.0v\bin\Debug\BanDong_1.0v.exe.config
+D:\Csharp\Program\BanDong\BanDong_1.0v\bin\Debug\BanDong_1.0v.exe
+D:\Csharp\Program\BanDong\BanDong_1.0v\bin\Debug\BanDong_1.0v.pdb
+D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1.0v.csproj.AssemblyReference.cache
+D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1.0v.csproj.SuggestedBindingRedirects.cache
+D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1._0v.Login_Form.resources
+D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1._0v.Properties.Resources.resources
+D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1._0v.Register_Form.resources
+D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1.0v.csproj.GenerateResource.cache
+D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1.0v.csproj.CoreCompileInputs.cache
+D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1.0v.exe
+D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1.0v.pdb
+>>>>>>> KKIT
+C:\C#\BanDong_1.0v\obj\Debug\BanDong_1._0v.Order_Form.resources
