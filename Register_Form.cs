@@ -35,6 +35,7 @@ namespace BanDong_1._0v
             }
         }
 
+
         /// <summary>
         /// 檢查是否有空白(True/False則回報資料不完整)
         /// </summary>
