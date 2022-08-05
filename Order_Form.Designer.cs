@@ -33,8 +33,6 @@
             this.LB_Title_StudentID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LB_Title_Register
@@ -54,7 +52,7 @@
             "便當票券",
             "現金"});
             this.cb_PayType.Location = new System.Drawing.Point(235, 142);
-            this.cb_PayType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_PayType.Margin = new System.Windows.Forms.Padding(2);
             this.cb_PayType.Name = "cb_PayType";
             this.cb_PayType.Size = new System.Drawing.Size(205, 20);
             this.cb_PayType.TabIndex = 9;
@@ -83,29 +81,10 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(235, 203);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(205, 20);
             this.comboBox1.TabIndex = 11;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(91, 319);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 12);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(239, 113);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 15);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "label3";
             // 
             // Order_Form
             // 
@@ -113,14 +92,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(800, 559);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.LB_Title_StudentID);
             this.Controls.Add(this.cb_PayType);
             this.Controls.Add(this.LB_Title_Register);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Order_Form";
             this.Text = "Order_Form";
             this.ResumeLayout(false);
@@ -135,7 +112,5 @@
         private System.Windows.Forms.Label LB_Title_StudentID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
     }
 }

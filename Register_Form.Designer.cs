@@ -58,6 +58,7 @@
             this.TB_StudentPassWord.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.TB_StudentPassWord.Location = new System.Drawing.Point(152, 259);
             this.TB_StudentPassWord.Name = "TB_StudentPassWord";
+            this.TB_StudentPassWord.PasswordChar = '*';
             this.TB_StudentPassWord.Size = new System.Drawing.Size(241, 36);
             this.TB_StudentPassWord.TabIndex = 11;
             // 
@@ -93,7 +94,7 @@
             // 
             this.TB_StudentName.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.TB_StudentName.Location = new System.Drawing.Point(151, 200);
-            this.TB_StudentName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_StudentName.Margin = new System.Windows.Forms.Padding(2);
             this.TB_StudentName.Name = "TB_StudentName";
             this.TB_StudentName.Size = new System.Drawing.Size(128, 36);
             this.TB_StudentName.TabIndex = 13;
@@ -114,21 +115,22 @@
             this.BTN_Clear.BackColor = System.Drawing.Color.Silver;
             this.BTN_Clear.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Clear.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BTN_Clear.Location = new System.Drawing.Point(224, 409);
-            this.BTN_Clear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_Clear.Location = new System.Drawing.Point(233, 419);
+            this.BTN_Clear.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Clear.Name = "BTN_Clear";
             this.BTN_Clear.Size = new System.Drawing.Size(100, 50);
             this.BTN_Clear.TabIndex = 15;
             this.BTN_Clear.Text = "清除";
             this.BTN_Clear.UseVisualStyleBackColor = false;
+            this.BTN_Clear.Click += new System.EventHandler(this.BTN_Clear_Click);
             // 
             // BTN_Submit
             // 
             this.BTN_Submit.BackColor = System.Drawing.Color.Blue;
             this.BTN_Submit.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Submit.ForeColor = System.Drawing.SystemColors.Control;
-            this.BTN_Submit.Location = new System.Drawing.Point(97, 409);
-            this.BTN_Submit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_Submit.Location = new System.Drawing.Point(106, 419);
+            this.BTN_Submit.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Submit.Name = "BTN_Submit";
             this.BTN_Submit.Size = new System.Drawing.Size(100, 50);
             this.BTN_Submit.TabIndex = 14;
@@ -140,8 +142,9 @@
             // 
             this.TB_CheckPassWord.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.TB_CheckPassWord.Location = new System.Drawing.Point(152, 325);
-            this.TB_CheckPassWord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_CheckPassWord.Margin = new System.Windows.Forms.Padding(2);
             this.TB_CheckPassWord.Name = "TB_CheckPassWord";
+            this.TB_CheckPassWord.PasswordChar = '*';
             this.TB_CheckPassWord.Size = new System.Drawing.Size(241, 36);
             this.TB_CheckPassWord.TabIndex = 17;
             // 
@@ -162,7 +165,7 @@
             this.BTN_Back.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Back.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BTN_Back.Location = new System.Drawing.Point(11, 500);
-            this.BTN_Back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_Back.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Back.Name = "BTN_Back";
             this.BTN_Back.Size = new System.Drawing.Size(120, 50);
             this.BTN_Back.TabIndex = 18;
@@ -173,9 +176,10 @@
             // CKB_MIS
             // 
             this.CKB_MIS.AutoSize = true;
+            this.CKB_MIS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CKB_MIS.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.CKB_MIS.Location = new System.Drawing.Point(318, 515);
-            this.CKB_MIS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CKB_MIS.Margin = new System.Windows.Forms.Padding(2);
             this.CKB_MIS.Name = "CKB_MIS";
             this.CKB_MIS.Size = new System.Drawing.Size(105, 35);
             this.CKB_MIS.TabIndex = 19;
@@ -184,6 +188,7 @@
             // 
             // Register_Form
             // 
+            this.AcceptButton = this.BTN_Submit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));

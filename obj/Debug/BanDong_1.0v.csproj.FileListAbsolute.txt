@@ -26,3 +26,4 @@ D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1.0v.exe
 D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1.0v.pdb
 >>>>>>> KKIT
 C:\C#\BanDong_1.0v\obj\Debug\BanDong_1._0v.Order_Form.resources
+D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1._0v.Order_Form.resources
