@@ -32,7 +32,6 @@
             this.cb_PayType = new System.Windows.Forms.ComboBox();
             this.LB_Title_StudentID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
             this.cb_BanDongType = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
@@ -42,9 +41,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tbox_remark = new System.Windows.Forms.TextBox();
-=======
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
->>>>>>> kkit
             this.SuspendLayout();
             // 
             // LB_Title_Register
@@ -64,13 +60,8 @@
             this.cb_PayType.Items.AddRange(new object[] {
             "便當票券",
             "現金"});
-<<<<<<< HEAD
             this.cb_PayType.Location = new System.Drawing.Point(376, 233);
             this.cb_PayType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-=======
-            this.cb_PayType.Location = new System.Drawing.Point(235, 142);
-            this.cb_PayType.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> kkit
             this.cb_PayType.Name = "cb_PayType";
             this.cb_PayType.Size = new System.Drawing.Size(272, 23);
             this.cb_PayType.TabIndex = 9;
@@ -99,7 +90,6 @@
             // 
             // cb_BanDongType
             // 
-<<<<<<< HEAD
             this.cb_BanDongType.FormattingEnabled = true;
             this.cb_BanDongType.Items.AddRange(new object[] {
             "圓形",
@@ -205,21 +195,11 @@
             this.tbox_remark.Size = new System.Drawing.Size(335, 106);
             this.tbox_remark.TabIndex = 21;
             // 
-=======
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(235, 203);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(205, 20);
-            this.comboBox1.TabIndex = 11;
-            // 
->>>>>>> kkit
             // Order_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(908, 699);
             this.Controls.Add(this.tbox_remark);
             this.Controls.Add(this.label3);
@@ -229,19 +209,12 @@
             this.Controls.Add(this.BTN_Buy);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.label2);
-=======
-            this.ClientSize = new System.Drawing.Size(800, 559);
->>>>>>> kkit
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cb_BanDongType);
             this.Controls.Add(this.LB_Title_StudentID);
             this.Controls.Add(this.cb_PayType);
             this.Controls.Add(this.LB_Title_Register);
-<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-=======
-            this.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> kkit
             this.Name = "Order_Form";
             this.Text = "Order_Form";
             this.Load += new System.EventHandler(this.Order_Form_Load);
@@ -256,7 +229,6 @@
         private System.Windows.Forms.ComboBox cb_PayType;
         private System.Windows.Forms.Label LB_Title_StudentID;
         private System.Windows.Forms.Label label1;
-<<<<<<< HEAD
         private System.Windows.Forms.ComboBox cb_BanDongType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelName;
@@ -266,8 +238,5 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbox_remark;
-=======
-        private System.Windows.Forms.ComboBox comboBox1;
->>>>>>> kkit
     }
 }

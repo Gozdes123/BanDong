@@ -29,14 +29,7 @@ namespace BanDong_1._0v
         {
             Order_Form order = new Order_Form();
             order.Show();
-            using (SqlConnection cn = new SqlConnection(sqlcn))
-            {
-                cn.Open();
-
-                MessageBox.Show("true");
-
-                cn.Close();
-            }
+            this.Hide();
         }
 
     }
