@@ -56,5 +56,14 @@ namespace BanDong_1._0v
 
 
         }
+
+        private void Order_Form_Load(object sender, EventArgs e)
+        {
+            using (SqlConnection cn=new SqlConnection(Login_Form.sqlcn))
+            {
+                cn.Open();
+                
+            }
+        }
     }
 }
