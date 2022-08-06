@@ -33,6 +33,8 @@ namespace BanDong_1._0v
             {
                 cn.Open();
 
+                MessageBox.Show("true");
+
                 cn.Close();
             }
         }
