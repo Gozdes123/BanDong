@@ -17,13 +17,14 @@ namespace BanDong_1._0v
         private string StudentName = "";
 
         DataSet ds = new DataSet();
-        public Order_Form(string StudentID,string StudentName)
+        public Order_Form(string StudentID, string StudentName)
         {
             InitializeComponent();
             this.StudentID = StudentID;
             this.StudentName = StudentName;
             LB_StudentName.Text = StudentName;
         }
+
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -32,17 +33,24 @@ namespace BanDong_1._0v
 
         private void BTN_Buy_Click_1(object sender, EventArgs e)
         {
-
+          
             using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
             {
                 cn.Open();
                 if (cb_PayType.Text != "" && cb_BanDongType.Text != "")
                 {
-                    string insert = $"insert into Orders(Ticket_Money, StudentName, Type, Remark, OrderDateTime) Values('{cb_PayType.Text}', '{labelName.Text}', '{cb_BanDongType.Text}', '{tbox_remark.Text}', '{DateTime.Now.ToString()}');";
-                    SqlDataAdapter da_buy = new SqlDataAdapter(insert, cn);
-                    da_buy.Fill(ds, "BuyBanDong");
-                    BTN_Buy.Enabled = false;
-                    MessageBox.Show("訂購成功!!");
+                    SqlDataAdapter da_search = new SqlDataAdapter($"select * from Students where StudentName ='{LB_StudentName.Text}'", cn);
+                    da_search.Fill(ds, "使用者");
+                    DataTable dt = ds.Tables["使用者"];
+                    if (dt.Rows.Count > 0)
+                    {
+                        string insertStr = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+                        string insert = $"insert into Orders(Ticket_Money, StudentName, Type, Remark, OrderDateTime) Values('{cb_PayType.Text}', '{LB_StudentName.Text}', '{cb_BanDongType.Text}', '{tbox_remark.Text}', '{insertStr}');";
+                        SqlDataAdapter da_buy = new SqlDataAdapter(insert, cn);
+                        da_buy.Fill(ds, "BuyBanDong");
+                        BTN_Buy.Enabled = false;
+                        MessageBox.Show("訂購成功!!");
+                    }
                 }
                 else if (cb_PayType.Text == "" && cb_BanDongType.Text != "")
                 {
@@ -56,16 +64,9 @@ namespace BanDong_1._0v
                     BTN_Buy.Enabled = true;
                 }
                 else MessageBox.Show("欄位請勿空白!");
-               
+
 
             }
-
-
-        }
-
-        private void Order_Form_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
