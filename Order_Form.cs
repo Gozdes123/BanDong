@@ -43,12 +43,15 @@ namespace BanDong_1._0v
                     da_search.Fill(ds, "使用者");
                     if (ds.Tables["使用者"].Rows.Count > 0)
                     {
-                        string insertStr = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
-                        string insert = $"insert into Orders(Ticket_Money, StudentName, Type, Remark, OrderDateTime) Values('{cb_PayType.Text}', '{LB_StudentName.Text}', '{cb_BanDongType.Text}', '{tbox_remark.Text}', '{insertStr}');";
+
+                        string insert = $"insert into Orders(Ticket_Money, StudentName, Type, Remark, OrderDateTime) Values('{cb_PayType.Text}', '{LB_StudentName.Text}', '{cb_BanDongType.Text}', '{tbox_remark.Text}', 'convert(varchar, getdate(), 120)');";
                         SqlDataAdapter da_buy = new SqlDataAdapter(insert, cn);
                         da_buy.Fill(ds, "BuyBanDong");
                         BTN_Buy.Enabled = false;
+                        BTN_Delete.Enabled = true;
+                        BTN_Edit.Enabled = true;
                         MessageBox.Show("訂購成功!!");
+                        
                     }
                 }
                 else if (cb_PayType.Text == "" && cb_BanDongType.Text != "")
@@ -65,17 +68,43 @@ namespace BanDong_1._0v
                 else MessageBox.Show("欄位請勿空白!");
             }
         }
-
+        private void CloseText()
+        {
+            cb_BanDongType.Enabled = false;
+            cb_PayType.Enabled = false;
+            tbox_remark.Enabled=false;
+        }
+        private void OpenText()
+        {
+            cb_BanDongType.Enabled = true;
+            cb_PayType.Enabled = true;
+            tbox_remark.Enabled = true;
+        }
         private void Order_Form_Load(object sender, EventArgs e)
         {
             Timer.Start();
-
             using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
             {
                 cn.Open();
                 SqlDataAdapter da_ordered = new SqlDataAdapter($"select * from Orders where StudentName='{LB_StudentName.Text}'", cn);
                 da_ordered.Fill(ds, "是否已訂購");
-                if (ds.Tables["是否已訂購"].Rows.Count > 0) BTN_Buy.Enabled = false; else BTN_Buy.Enabled = true;
+                DataTable dt = ds.Tables["是否已訂購"];
+                if (ds.Tables["是否已訂購"].Rows.Count > 0)
+                {
+                    cb_PayType.Text = dt.Rows[0]["Ticket_Money"].ToString();
+                    cb_BanDongType.Text = dt.Rows[0]["Type"].ToString();
+                    tbox_remark.Text = dt.Rows[0]["Remark"].ToString();
+                    BTN_Buy.Enabled = false;
+                    BTN_Edit.Enabled = true;
+                    BTN_Delete.Enabled = true;
+                    CloseText();
+                }
+                else
+                {
+                    BTN_Buy.Enabled = true;
+                    BTN_Edit.Enabled = false;
+                    BTN_Delete.Enabled = false;
+                }
             }
             
         }
@@ -88,6 +117,12 @@ namespace BanDong_1._0v
         private void Timer_Tick(object sender, EventArgs e)
         {
             LB_Time.Text = DateTime.Now.ToString();
+        }
+
+        private void BTN_Adapt_Click(object sender, EventArgs e)
+        {
+            Edit_Form edit = new Edit_Form(StudentID,StudentName,cb_PayType.Text,cb_BanDongType.Text,tbox_remark.Text);
+            edit.Show();
         }
     }
 }

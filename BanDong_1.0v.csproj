@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Edit_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Form.Designer.cs">
+      <DependentUpon>Edit_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="Register_Form.Designer.cs">
       <DependentUpon>Register_Form.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Edit_Form.resx">
+      <DependentUpon>Edit_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
