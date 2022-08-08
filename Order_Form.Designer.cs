@@ -125,7 +125,7 @@
             // 
             // BTN_Buy
             // 
-            this.BTN_Buy.BackColor = System.Drawing.Color.Silver;
+            this.BTN_Buy.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.BTN_Buy.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Buy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BTN_Buy.Location = new System.Drawing.Point(171, 510);
@@ -231,6 +231,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Order_Form";
             this.Text = "Order_Form";
+            this.Load += new System.EventHandler(this.Order_Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
