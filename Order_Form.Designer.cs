@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.LB_Title_Order = new System.Windows.Forms.Label();
             this.cb_PayType = new System.Windows.Forms.ComboBox();
             this.LB_Title_StudentID = new System.Windows.Forms.Label();
@@ -42,6 +43,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbox_remark = new System.Windows.Forms.TextBox();
             this.LB_StudentName = new System.Windows.Forms.Label();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
+            this.LB_Time = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LB_Title_Order
@@ -61,7 +64,7 @@
             "便當票券",
             "現金"});
             this.cb_PayType.Location = new System.Drawing.Point(282, 186);
-            this.cb_PayType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_PayType.Margin = new System.Windows.Forms.Padding(2);
             this.cb_PayType.Name = "cb_PayType";
             this.cb_PayType.Size = new System.Drawing.Size(205, 20);
             this.cb_PayType.TabIndex = 9;
@@ -93,7 +96,7 @@
             "圓形",
             "方形"});
             this.cb_BanDongType.Location = new System.Drawing.Point(282, 247);
-            this.cb_BanDongType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_BanDongType.Margin = new System.Windows.Forms.Padding(2);
             this.cb_BanDongType.Name = "cb_BanDongType";
             this.cb_BanDongType.Size = new System.Drawing.Size(205, 20);
             this.cb_BanDongType.TabIndex = 11;
@@ -124,7 +127,7 @@
             this.BTN_Buy.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Buy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BTN_Buy.Location = new System.Drawing.Point(128, 408);
-            this.BTN_Buy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_Buy.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Buy.Name = "BTN_Buy";
             this.BTN_Buy.Size = new System.Drawing.Size(100, 50);
             this.BTN_Buy.TabIndex = 16;
@@ -138,7 +141,7 @@
             this.BTN_Adapt.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Adapt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BTN_Adapt.Location = new System.Drawing.Point(314, 408);
-            this.BTN_Adapt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_Adapt.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Adapt.Name = "BTN_Adapt";
             this.BTN_Adapt.Size = new System.Drawing.Size(100, 50);
             this.BTN_Adapt.TabIndex = 17;
@@ -151,7 +154,7 @@
             this.BTN_Delete.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Delete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BTN_Delete.Location = new System.Drawing.Point(430, 408);
-            this.BTN_Delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_Delete.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Delete.Name = "BTN_Delete";
             this.BTN_Delete.Size = new System.Drawing.Size(100, 50);
             this.BTN_Delete.TabIndex = 18;
@@ -164,7 +167,7 @@
             this.button3.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button3.Location = new System.Drawing.Point(128, 475);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(402, 41);
             this.button3.TabIndex = 19;
@@ -185,7 +188,7 @@
             // 
             this.tbox_remark.BackColor = System.Drawing.Color.PapayaWhip;
             this.tbox_remark.Location = new System.Drawing.Point(235, 302);
-            this.tbox_remark.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbox_remark.Margin = new System.Windows.Forms.Padding(2);
             this.tbox_remark.Multiline = true;
             this.tbox_remark.Name = "tbox_remark";
             this.tbox_remark.Size = new System.Drawing.Size(252, 86);
@@ -201,12 +204,27 @@
             this.LB_StudentName.TabIndex = 22;
             this.LB_StudentName.Text = "匿名";
             // 
+            // Timer
+            // 
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
+            // LB_Time
+            // 
+            this.LB_Time.AutoSize = true;
+            this.LB_Time.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.LB_Time.Location = new System.Drawing.Point(424, 641);
+            this.LB_Time.Name = "LB_Time";
+            this.LB_Time.Size = new System.Drawing.Size(250, 31);
+            this.LB_Time.TabIndex = 23;
+            this.LB_Time.Text = "2022/08/07 00:00:00";
+            // 
             // Order_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(681, 559);
+            this.ClientSize = new System.Drawing.Size(704, 681);
+            this.Controls.Add(this.LB_Time);
             this.Controls.Add(this.LB_StudentName);
             this.Controls.Add(this.tbox_remark);
             this.Controls.Add(this.label3);
@@ -221,7 +239,7 @@
             this.Controls.Add(this.LB_Title_StudentID);
             this.Controls.Add(this.cb_PayType);
             this.Controls.Add(this.LB_Title_Order);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Order_Form";
             this.Text = "Order_Form";
             this.Load += new System.EventHandler(this.Order_Form_Load);
@@ -246,5 +264,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbox_remark;
         private System.Windows.Forms.Label LB_StudentName;
+        private System.Windows.Forms.Timer Timer;
+        private System.Windows.Forms.Label LB_Time;
     }
 }

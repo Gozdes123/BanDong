@@ -65,7 +65,12 @@ namespace BanDong_1._0v
 
         private void Order_Form_Load(object sender, EventArgs e)
         {
+            Timer.Start();
+        }
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            LB_Time.Text = DateTime.Now.ToString();
         }
     }
 }
