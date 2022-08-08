@@ -68,7 +68,8 @@ namespace BanDong_1._0v
 
         private void Order_Form_Load(object sender, EventArgs e)
         {
-            
+            Timer.Start();
+
             using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
             {
                 cn.Open();
@@ -76,11 +77,17 @@ namespace BanDong_1._0v
                 da_ordered.Fill(ds, "是否已訂購");
                 if (ds.Tables["是否已訂購"].Rows.Count > 0) BTN_Buy.Enabled = false; else BTN_Buy.Enabled = true;
             }
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            LB_Time.Text = DateTime.Now.ToString();
         }
     }
 }
