@@ -193,7 +193,7 @@
             this.button_history.TabIndex = 19;
             this.button_history.Text = "歷史訂購紀錄";
             this.button_history.UseVisualStyleBackColor = false;
-            this.button_history.Click += new System.EventHandler(this.button3_Click);
+            this.button_history.Click += new System.EventHandler(this.button_history_Click);
             // 
             // label3
             // 
@@ -357,6 +357,7 @@
             this.BTN_Reset.Text = "重置";
             this.BTN_Reset.UseVisualStyleBackColor = false;
             this.BTN_Reset.Visible = false;
+            this.BTN_Reset.Click += new System.EventHandler(this.BTN_Reset_Click);
             // 
             // BTN_Cancel
             // 
@@ -371,6 +372,7 @@
             this.BTN_Cancel.Text = "取消";
             this.BTN_Cancel.UseVisualStyleBackColor = false;
             this.BTN_Cancel.Visible = false;
+            this.BTN_Cancel.Click += new System.EventHandler(this.BTN_Cancel_Click);
             // 
             // BTN_Confirm
             // 
@@ -385,13 +387,14 @@
             this.BTN_Confirm.Text = "確認編輯";
             this.BTN_Confirm.UseVisualStyleBackColor = false;
             this.BTN_Confirm.Visible = false;
+            this.BTN_Confirm.Click += new System.EventHandler(this.BTN_Confirm_Click);
             // 
             // Order_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(863, 858);
+            this.ClientSize = new System.Drawing.Size(1381, 858);
             this.Controls.Add(this.BTN_Reset);
             this.Controls.Add(this.BTN_Cancel);
             this.Controls.Add(this.BTN_Confirm);
