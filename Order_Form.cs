@@ -43,10 +43,12 @@ namespace BanDong_1._0v
                     da_search.Fill(ds, "使用者");
                     if (ds.Tables["使用者"].Rows.Count > 0)
                     {
-
-                        string insert = $"insert into Orders(Ticket_Money, StudentName, Type, Remark, OrderDateTime) Values('{cb_PayType.Text}', '{LB_StudentName.Text}', '{cb_BanDongType.Text}', '{tbox_remark.Text}', 'convert(varchar, getdate(), 120)');";
+                        string insertlogs = $"insert into Logs(StudentID,StudentName,Ticket_money,Type,Remark,OrderDateTime) Values ('{StudentID}','{StudentName}','{cb_PayType.Text}','{cb_BanDongType.Text}','{tbox_remark.Text}',convert(varchar, getdate(), 120))";
+                        string insert = $"insert into Orders(Ticket_Money, StudentName, Type, Remark, OrderDateTime) Values('{cb_PayType.Text}', '{LB_StudentName.Text}', '{cb_BanDongType.Text}', '{tbox_remark.Text}', convert(varchar, getdate(), 120));";
                         SqlDataAdapter da_buy = new SqlDataAdapter(insert, cn);
+                        SqlDataAdapter da_logs =new SqlDataAdapter(insertlogs, cn);
                         da_buy.Fill(ds, "BuyBanDong");
+                        da_logs.Fill(ds,"新增Logs");
                         BTN_Buy.Enabled = false;
                         BTN_Delete.Enabled = true;
                         BTN_Edit.Enabled = true;
@@ -121,8 +123,35 @@ namespace BanDong_1._0v
 
         private void BTN_Adapt_Click(object sender, EventArgs e)
         {
-            Edit_Form edit = new Edit_Form(StudentID,StudentName,cb_PayType.Text,cb_BanDongType.Text,tbox_remark.Text);
-            edit.Show();
+            Size = new Size(1181, 905);
+            LB_EDIT.Visible = true;
+            LB_PayType2.Visible = true;
+            LB_BanDongType2.Visible = true;
+            LB_Remark2.Visible = true;
+            cb_BanDongType2.Visible=true;
+            cb_PayType2.Visible=true;
+            tbox_remark2.Visible=true;
+            BTN_Confirm.Visible = true;
+            BTN_Reset.Visible=true;
+            BTN_Cancel.Visible=true;
+            //Edit_Form edit = new Edit_Form(StudentID,StudentName,cb_PayType.Text,cb_BanDongType.Text,tbox_remark.Text);
+            //edit.Show();
+        }
+
+        private void BTN_Delete_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection cn=new SqlConnection(Login_Form.sqlcn))
+            {
+                cn.Open();
+                DialogResult dr = MessageBox.Show("確認是否刪除","通知",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                if(dr == DialogResult.Yes)
+                {
+                    SqlDataAdapter da_delete = new SqlDataAdapter($"delete from Orders where StudentName='{LB_StudentName.Text}'", cn);
+                    SqlDataAdapter de_deletelogs = new SqlDataAdapter($"delete from Logs where StudentName='{LB_StudentName.Text}'", cn);
+                    da_delete.Fill(ds, "刪除訂單");
+                    de_deletelogs.Fill(ds, "刪除LOG");
+                }
+            }
         }
     }
 }
