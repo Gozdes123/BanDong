@@ -13,15 +13,26 @@ namespace BanDong_1._0v
 {
     public partial class Order_Form : Form
     {
-        private string StudentID = "";
-        private string StudentName = "";
+        private string StudentID = "";//存取學生ID
+        private string StudentName = "";//存取學生Name
+        private string MIS = "";//存取是否為MIS
         DataSet ds = new DataSet();
-        public Order_Form(string StudentID, string StudentName)
+        public Order_Form(string StudentID, string StudentName,string MIS)
         {
             InitializeComponent();
             this.StudentID = StudentID;
             this.StudentName = StudentName;
+            this.MIS = MIS;
             LB_StudentName.Text = StudentName;
+            //判斷是否為管理員決定顯是否顯示輸出
+            if (MIS == "True")
+            {
+                BTN_Output.Show();
+            }
+            else
+            {
+                BTN_Output.Hide();
+            }
         }
 
 
@@ -43,8 +54,7 @@ namespace BanDong_1._0v
                     da_search.Fill(ds, "使用者");
                     if (ds.Tables["使用者"].Rows.Count > 0)
                     {
-                        string insertStr = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
-                        string insert = $"insert into Orders(Ticket_Money, StudentName, Type, Remark, OrderDateTime) Values('{cb_PayType.Text}', '{LB_StudentName.Text}', '{cb_BanDongType.Text}', '{tbox_remark.Text}', '{insertStr}');";
+                        string insert = $"insert into Orders(Ticket_Money, StudentName, Type, Remark, OrderDateTime) Values('{cb_PayType.Text}', '{LB_StudentName.Text}', '{cb_BanDongType.Text}', '{tbox_remark.Text}', 'CONVERT(varchar(100), GETDATE(), 120);');";
                         SqlDataAdapter da_buy = new SqlDataAdapter(insert, cn);
                         da_buy.Fill(ds, "BuyBanDong");
                         BTN_Buy.Enabled = false;

@@ -53,6 +53,14 @@
             this.LB_Title_Register.TabIndex = 7;
             this.LB_Title_Register.Text = "學   員   註   冊";
             // 
+            // TB_StudentID
+            // 
+            this.TB_StudentID.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.TB_StudentID.Location = new System.Drawing.Point(152, 132);
+            this.TB_StudentID.Name = "TB_StudentID";
+            this.TB_StudentID.Size = new System.Drawing.Size(100, 36);
+            this.TB_StudentID.TabIndex = 0;
+            // 
             // LB_Title_StudentPassWord
             // 
             this.LB_Title_StudentPassWord.AutoSize = true;
@@ -107,7 +115,7 @@
             this.BTN_Submit.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Submit.Name = "BTN_Submit";
             this.BTN_Submit.Size = new System.Drawing.Size(100, 50);
-            this.BTN_Submit.TabIndex = 14;
+            this.BTN_Submit.TabIndex = 4;
             this.BTN_Submit.Text = "送出";
             this.BTN_Submit.UseVisualStyleBackColor = false;
             this.BTN_Submit.Click += new System.EventHandler(this.BTN_Submit_Click);
@@ -137,21 +145,13 @@
             this.BTN_Back.UseVisualStyleBackColor = false;
             this.BTN_Back.Click += new System.EventHandler(this.BTN_Back_Click);
             // 
-            // TB_StudentID
-            // 
-            this.TB_StudentID.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TB_StudentID.Location = new System.Drawing.Point(152, 132);
-            this.TB_StudentID.Name = "TB_StudentID";
-            this.TB_StudentID.Size = new System.Drawing.Size(100, 36);
-            this.TB_StudentID.TabIndex = 10;
-            // 
             // TB_StudentName
             // 
             this.TB_StudentName.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.TB_StudentName.Location = new System.Drawing.Point(152, 193);
             this.TB_StudentName.Name = "TB_StudentName";
             this.TB_StudentName.Size = new System.Drawing.Size(181, 36);
-            this.TB_StudentName.TabIndex = 20;
+            this.TB_StudentName.TabIndex = 1;
             // 
             // TB_StudentPassWord
             // 
@@ -159,7 +159,7 @@
             this.TB_StudentPassWord.Location = new System.Drawing.Point(152, 259);
             this.TB_StudentPassWord.Name = "TB_StudentPassWord";
             this.TB_StudentPassWord.Size = new System.Drawing.Size(241, 36);
-            this.TB_StudentPassWord.TabIndex = 21;
+            this.TB_StudentPassWord.TabIndex = 2;
             // 
             // TB_CheckPassWord
             // 
@@ -167,7 +167,7 @@
             this.TB_CheckPassWord.Location = new System.Drawing.Point(152, 325);
             this.TB_CheckPassWord.Name = "TB_CheckPassWord";
             this.TB_CheckPassWord.Size = new System.Drawing.Size(241, 36);
-            this.TB_CheckPassWord.TabIndex = 22;
+            this.TB_CheckPassWord.TabIndex = 3;
             // 
             // CKB_MIS
             // 

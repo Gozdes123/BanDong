@@ -15,6 +15,7 @@ namespace BanDong_1._0v
     {
         public static string StudentID = "";//學生ID
         public static string StudentName = "";//學生Name
+        public static string MIS = "False";
         public static string sqlcn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|BanDongDB.mdf;Integrated Security=True";
         
         
@@ -48,8 +49,8 @@ namespace BanDong_1._0v
                             {
                                 StudentID = dataReader_Select["StudentID"].ToString();//存取SQL學生ID
                                 StudentName = dataReader_Select["StudentName"].ToString();//存取SQL學生Name
-
-                                Order_Form order = new Order_Form(StudentID,StudentName);
+                                MIS = dataReader_Select["MIS"].ToString();
+                                Order_Form order = new Order_Form(StudentID,StudentName,MIS);
                                 order.Show();
 
                             }
