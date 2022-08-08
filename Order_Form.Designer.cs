@@ -42,6 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbox_remark = new System.Windows.Forms.TextBox();
             this.LB_StudentName = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LB_Title_Order
@@ -175,6 +176,7 @@
             this.button3.TabIndex = 19;
             this.button3.Text = "歷史訂購紀錄";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label3
             // 
@@ -208,12 +210,26 @@
             this.LB_StudentName.TabIndex = 22;
             this.LB_StudentName.Text = "匿名";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button1.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(171, 667);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(536, 51);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "輸出訂購單";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Order_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(908, 699);
+            this.ClientSize = new System.Drawing.Size(908, 741);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.LB_StudentName);
             this.Controls.Add(this.tbox_remark);
             this.Controls.Add(this.label3);
@@ -253,5 +269,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbox_remark;
         private System.Windows.Forms.Label LB_StudentName;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -77,5 +77,10 @@ namespace BanDong_1._0v
                 if (ds.Tables["是否已訂購"].Rows.Count > 0) BTN_Buy.Enabled = false; else BTN_Buy.Enabled = true;
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
