@@ -43,7 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbox_remark = new System.Windows.Forms.TextBox();
             this.LB_StudentName = new System.Windows.Forms.Label();
-            this.BTN_Output = new System.Windows.Forms.Button();
             this.button_layout = new System.Windows.Forms.Button();
             this.LB_Time = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
@@ -229,18 +228,6 @@
             this.LB_StudentName.TabIndex = 22;
             this.LB_StudentName.Text = "匿名";
             // 
-            // BTN_Output
-            // 
-            this.BTN_Output.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.BTN_Output.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.BTN_Output.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BTN_Output.Location = new System.Drawing.Point(128, 534);
-            this.BTN_Output.Margin = new System.Windows.Forms.Padding(2);
-            this.BTN_Output.Name = "BTN_Output";
-            this.BTN_Output.Size = new System.Drawing.Size(402, 41);
-            this.BTN_Output.TabIndex = 23;
-            this.BTN_Output.Text = "輸出訂購單";
-            this.BTN_Output.UseVisualStyleBackColor = false;
             // button_layout
             // 
             this.button_layout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -258,13 +245,10 @@
             // 
             this.LB_Time.AutoSize = true;
             this.LB_Time.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LB_Time.Location = new System.Drawing.Point(382, 641);
-            this.LB_Time.Name = "LB_Time";
-            this.LB_Time.Size = new System.Drawing.Size(310, 31);
             this.LB_Time.Location = new System.Drawing.Point(524, 808);
             this.LB_Time.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Time.Name = "LB_Time";
-            this.LB_Time.Size = new System.Drawing.Size(215, 38);
+            this.LB_Time.Size = new System.Drawing.Size(395, 38);
             this.LB_Time.TabIndex = 24;
             this.LB_Time.Text = "2022/08/07  上午 10:10:40";
             // 
@@ -410,9 +394,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(704, 681);
-            this.Controls.Add(this.LB_Time);
-            this.Controls.Add(this.BTN_Output);
             this.ClientSize = new System.Drawing.Size(1381, 858);
             this.Controls.Add(this.BTN_Reset);
             this.Controls.Add(this.BTN_Cancel);
@@ -466,7 +447,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbox_remark;
         private System.Windows.Forms.Label LB_StudentName;
-        private System.Windows.Forms.Button BTN_Output;
         private System.Windows.Forms.Button button_layout;
         private System.Windows.Forms.Label LB_Time;
         private System.Windows.Forms.Timer Timer;

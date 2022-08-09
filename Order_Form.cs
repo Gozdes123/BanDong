@@ -25,14 +25,6 @@ namespace BanDong_1._0v
             this.MIS = MIS;
             LB_StudentName.Text = StudentName;
             //判斷是否為管理員決定顯是否顯示輸出
-            if (MIS == "True")
-            {
-                BTN_Output.Show();
-            }
-            else
-            {
-                BTN_Output.Hide();
-            }
             this.Size = new System.Drawing.Size(720, 720);
         }
 
