@@ -17,7 +17,7 @@ namespace BanDong_1._0v
         private string StudentName = "";//存取學生Name
         private string MIS = "";//存取是否為MIS
         DataSet ds = new DataSet();
-        public Order_Form(string StudentID, string StudentName,string MIS)
+        public Order_Form(string StudentID, string StudentName, string MIS)
         {
             InitializeComponent();
             this.StudentID = StudentID;
@@ -47,7 +47,7 @@ namespace BanDong_1._0v
                     da_search.Fill(ds, "使用者");
                     if (ds.Tables["使用者"].Rows.Count > 0)
                     {
-                        string insertlogs = $"insert into Logs(StudentID,StudentName,Ticket_money,Type,Remark,OrderDateTime) Values ('{StudentID}','{StudentName}','{cb_PayType.Text}','{cb_BanDongType.Text}','{tbox_remark.Text}',convert(varchar, getdate(), 120))";
+                        string insertlogs = $"insert into Logs(OrderDateTime,StudentID,StudentName,Ticket_money,Type,Remark) Values (convert(varchar, getdate(), 120),'{StudentID}','{StudentName}','{cb_PayType.Text}','{cb_BanDongType.Text}','{tbox_remark.Text}')";
                         string insert = $"insert into Orders(Ticket_Money, StudentName, Type, Remark, OrderDateTime) Values('{cb_PayType.Text}', '{LB_StudentName.Text}', '{cb_BanDongType.Text}', '{tbox_remark.Text}', convert(varchar, getdate(), 120));";
                         SqlDataAdapter da_buy = new SqlDataAdapter(insert, cn);
                         SqlDataAdapter da_logs = new SqlDataAdapter(insertlogs, cn);
@@ -217,7 +217,7 @@ namespace BanDong_1._0v
 
         private void button_history_Click(object sender, EventArgs e)
         {
-            History_Form history = new History_Form(StudentID,StudentName);
+            History_Form history = new History_Form(StudentID, StudentName);
             history.Show();
         }
     }
