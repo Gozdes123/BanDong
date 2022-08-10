@@ -29,3 +29,5 @@ C:\C#\BanDong_1.0v\obj\Debug\BanDong_1._0v.Order_Form.resources
 D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1._0v.Order_Form.resources
 C:\C#\BanDong_1.0v\obj\Debug\BanDong_1._0v.Edit_Form.resources
 C:\C#\BanDong_1.0v\obj\Debug\BanDong_1._0v.History_Form.resources
+D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1._0v.History_Form.resources
+D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1._0v.TodayOrder_Form.resources

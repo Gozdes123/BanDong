@@ -16,7 +16,7 @@ namespace BanDong_1._0v
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login_Form());
+            Application.Run(new Order_Form());
         }
     }
 }

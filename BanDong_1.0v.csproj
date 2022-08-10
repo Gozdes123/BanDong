@@ -72,6 +72,12 @@
     <Compile Include="Register_Form.Designer.cs">
       <DependentUpon>Register_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="TodayOrder_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TodayOrder_Form.Designer.cs">
+      <DependentUpon>TodayOrder_Form.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="History_Form.resx">
       <DependentUpon>History_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +98,9 @@
     </Compile>
     <EmbeddedResource Include="Register_Form.resx">
       <DependentUpon>Register_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TodayOrder_Form.resx">
+      <DependentUpon>TodayOrder_Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
