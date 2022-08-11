@@ -57,6 +57,7 @@
             this.BTN_Cancel = new System.Windows.Forms.Button();
             this.BTN_Confirm = new System.Windows.Forms.Button();
             this.Timer_SQL_Truncate = new System.Windows.Forms.Timer(this.components);
+            this.BTN_Logout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LB_Title_Order
@@ -240,7 +241,7 @@
             // 
             this.LB_TimeShow.AutoSize = true;
             this.LB_TimeShow.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LB_TimeShow.Location = new System.Drawing.Point(408, 646);
+            this.LB_TimeShow.Location = new System.Drawing.Point(173, 689);
             this.LB_TimeShow.Name = "LB_TimeShow";
             this.LB_TimeShow.Size = new System.Drawing.Size(310, 31);
             this.LB_TimeShow.TabIndex = 24;
@@ -254,7 +255,7 @@
             // 
             this.LB_Title_Edit.AutoSize = true;
             this.LB_Title_Edit.Font = new System.Drawing.Font("標楷體", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LB_Title_Edit.Location = new System.Drawing.Point(684, 38);
+            this.LB_Title_Edit.Location = new System.Drawing.Point(653, 38);
             this.LB_Title_Edit.Name = "LB_Title_Edit";
             this.LB_Title_Edit.Size = new System.Drawing.Size(293, 37);
             this.LB_Title_Edit.TabIndex = 25;
@@ -265,7 +266,7 @@
             // 
             this.LB_Title_PayType2.AutoSize = true;
             this.LB_Title_PayType2.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LB_Title_PayType2.Location = new System.Drawing.Point(643, 182);
+            this.LB_Title_PayType2.Location = new System.Drawing.Point(612, 182);
             this.LB_Title_PayType2.Name = "LB_Title_PayType2";
             this.LB_Title_PayType2.Size = new System.Drawing.Size(134, 31);
             this.LB_Title_PayType2.TabIndex = 27;
@@ -279,7 +280,7 @@
             this.CB_PayType2.Items.AddRange(new object[] {
             "便當票券",
             "現金"});
-            this.CB_PayType2.Location = new System.Drawing.Point(782, 174);
+            this.CB_PayType2.Location = new System.Drawing.Point(751, 174);
             this.CB_PayType2.Margin = new System.Windows.Forms.Padding(2);
             this.CB_PayType2.Name = "CB_PayType2";
             this.CB_PayType2.Size = new System.Drawing.Size(205, 39);
@@ -290,7 +291,7 @@
             // 
             this.TB_Remark2.BackColor = System.Drawing.Color.PapayaWhip;
             this.TB_Remark2.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TB_Remark2.Location = new System.Drawing.Point(722, 302);
+            this.TB_Remark2.Location = new System.Drawing.Point(691, 302);
             this.TB_Remark2.Margin = new System.Windows.Forms.Padding(2);
             this.TB_Remark2.Multiline = true;
             this.TB_Remark2.Name = "TB_Remark2";
@@ -302,7 +303,7 @@
             // 
             this.LB_Title_Remark2.AutoSize = true;
             this.LB_Title_Remark2.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LB_Title_Remark2.Location = new System.Drawing.Point(643, 302);
+            this.LB_Title_Remark2.Location = new System.Drawing.Point(612, 302);
             this.LB_Title_Remark2.Name = "LB_Title_Remark2";
             this.LB_Title_Remark2.Size = new System.Drawing.Size(74, 31);
             this.LB_Title_Remark2.TabIndex = 30;
@@ -313,7 +314,7 @@
             // 
             this.LB_Title_BanDongType2.AutoSize = true;
             this.LB_Title_BanDongType2.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LB_Title_BanDongType2.Location = new System.Drawing.Point(643, 247);
+            this.LB_Title_BanDongType2.Location = new System.Drawing.Point(612, 247);
             this.LB_Title_BanDongType2.Name = "LB_Title_BanDongType2";
             this.LB_Title_BanDongType2.Size = new System.Drawing.Size(134, 31);
             this.LB_Title_BanDongType2.TabIndex = 29;
@@ -327,7 +328,7 @@
             this.CB_BanDongType2.Items.AddRange(new object[] {
             "圓形",
             "方形"});
-            this.CB_BanDongType2.Location = new System.Drawing.Point(782, 239);
+            this.CB_BanDongType2.Location = new System.Drawing.Point(751, 239);
             this.CB_BanDongType2.Margin = new System.Windows.Forms.Padding(2);
             this.CB_BanDongType2.Name = "CB_BanDongType2";
             this.CB_BanDongType2.Size = new System.Drawing.Size(205, 39);
@@ -339,7 +340,7 @@
             this.BTN_Reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.BTN_Reset.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Reset.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BTN_Reset.Location = new System.Drawing.Point(827, 408);
+            this.BTN_Reset.Location = new System.Drawing.Point(796, 408);
             this.BTN_Reset.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Reset.Name = "BTN_Reset";
             this.BTN_Reset.Size = new System.Drawing.Size(73, 50);
@@ -354,7 +355,7 @@
             this.BTN_Cancel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BTN_Cancel.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Cancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BTN_Cancel.Location = new System.Drawing.Point(904, 408);
+            this.BTN_Cancel.Location = new System.Drawing.Point(873, 408);
             this.BTN_Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Cancel.Name = "BTN_Cancel";
             this.BTN_Cancel.Size = new System.Drawing.Size(73, 50);
@@ -369,7 +370,7 @@
             this.BTN_Confirm.BackColor = System.Drawing.Color.LightCoral;
             this.BTN_Confirm.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Confirm.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BTN_Confirm.Location = new System.Drawing.Point(649, 408);
+            this.BTN_Confirm.Location = new System.Drawing.Point(618, 408);
             this.BTN_Confirm.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Confirm.Name = "BTN_Confirm";
             this.BTN_Confirm.Size = new System.Drawing.Size(120, 50);
@@ -384,12 +385,27 @@
             this.Timer_SQL_Truncate.Interval = 60000;
             this.Timer_SQL_Truncate.Tick += new System.EventHandler(this.Timer_SQL_Truncate_Tick);
             // 
+            // BTN_Logout
+            // 
+            this.BTN_Logout.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BTN_Logout.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.BTN_Logout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BTN_Logout.Location = new System.Drawing.Point(11, 668);
+            this.BTN_Logout.Margin = new System.Windows.Forms.Padding(2);
+            this.BTN_Logout.Name = "BTN_Logout";
+            this.BTN_Logout.Size = new System.Drawing.Size(115, 50);
+            this.BTN_Logout.TabIndex = 38;
+            this.BTN_Logout.Text = "登出";
+            this.BTN_Logout.UseVisualStyleBackColor = false;
+            this.BTN_Logout.Click += new System.EventHandler(this.BTN_Logout_Click);
+            // 
             // Order_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(1036, 686);
+            this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.BTN_Logout);
             this.Controls.Add(this.BTN_Reset);
             this.Controls.Add(this.BTN_Cancel);
             this.Controls.Add(this.BTN_Confirm);
@@ -457,5 +473,6 @@
         private System.Windows.Forms.Button BTN_Cancel;
         private System.Windows.Forms.Button BTN_Confirm;
         private System.Windows.Forms.Timer Timer_SQL_Truncate;
+        private System.Windows.Forms.Button BTN_Logout;
     }
 }

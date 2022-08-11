@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LB_Title_Order = new System.Windows.Forms.Label();
             this.LB_Title_OrderDate = new System.Windows.Forms.Label();
             this.LB_Title_TakeDate = new System.Windows.Forms.Label();
             this.LB_OrderDate = new System.Windows.Forms.Label();
             this.LB_TakeDate = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGV_TodayOrder = new System.Windows.Forms.DataGridView();
             this.LB_Title_Class = new System.Windows.Forms.Label();
             this.CBB_Class = new System.Windows.Forms.ComboBox();
             this.TB_CreateClass = new System.Windows.Forms.TextBox();
             this.BTN_CreateClass = new System.Windows.Forms.Button();
             this.BTN_ToExcel = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.BTN_Print = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_TodayOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // LB_Title_Order
@@ -93,14 +95,32 @@
             this.LB_TakeDate.TabIndex = 26;
             this.LB_TakeDate.Text = "2022/08/07  上午 10:10:40";
             // 
-            // dataGridView1
+            // DGV_TodayOrder
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 151);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(978, 450);
-            this.dataGridView1.TabIndex = 27;
+            this.DGV_TodayOrder.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aquamarine;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("標楷體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_TodayOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGV_TodayOrder.ColumnHeadersHeight = 36;
+            this.DGV_TodayOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_TodayOrder.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DGV_TodayOrder.Location = new System.Drawing.Point(18, 151);
+            this.DGV_TodayOrder.Name = "DGV_TodayOrder";
+            this.DGV_TodayOrder.RowTemplate.Height = 24;
+            this.DGV_TodayOrder.Size = new System.Drawing.Size(978, 450);
+            this.DGV_TodayOrder.TabIndex = 27;
             // 
             // LB_Title_Class
             // 
@@ -154,19 +174,20 @@
             this.BTN_ToExcel.TabIndex = 32;
             this.BTN_ToExcel.Text = "匯出Excel";
             this.BTN_ToExcel.UseVisualStyleBackColor = false;
+            this.BTN_ToExcel.Click += new System.EventHandler(this.BTN_ToExcel_Click);
             // 
-            // button1
+            // BTN_Print
             // 
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(719, 668);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(236, 50);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "列印";
-            this.button1.UseVisualStyleBackColor = false;
+            this.BTN_Print.BackColor = System.Drawing.Color.RoyalBlue;
+            this.BTN_Print.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.BTN_Print.ForeColor = System.Drawing.SystemColors.Control;
+            this.BTN_Print.Location = new System.Drawing.Point(719, 668);
+            this.BTN_Print.Margin = new System.Windows.Forms.Padding(2);
+            this.BTN_Print.Name = "BTN_Print";
+            this.BTN_Print.Size = new System.Drawing.Size(236, 50);
+            this.BTN_Print.TabIndex = 33;
+            this.BTN_Print.Text = "列印";
+            this.BTN_Print.UseVisualStyleBackColor = false;
             // 
             // TodayOrder_Form
             // 
@@ -174,13 +195,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1008, 729);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BTN_Print);
             this.Controls.Add(this.BTN_ToExcel);
             this.Controls.Add(this.BTN_CreateClass);
             this.Controls.Add(this.TB_CreateClass);
             this.Controls.Add(this.CBB_Class);
             this.Controls.Add(this.LB_Title_Class);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGV_TodayOrder);
             this.Controls.Add(this.LB_TakeDate);
             this.Controls.Add(this.LB_OrderDate);
             this.Controls.Add(this.LB_Title_TakeDate);
@@ -188,7 +209,8 @@
             this.Controls.Add(this.LB_Title_Order);
             this.Name = "TodayOrder_Form";
             this.Text = "TodayOrder_Form";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.TodayOrder_Form_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_TodayOrder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,12 +223,12 @@
         private System.Windows.Forms.Label LB_Title_TakeDate;
         private System.Windows.Forms.Label LB_OrderDate;
         private System.Windows.Forms.Label LB_TakeDate;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGV_TodayOrder;
         private System.Windows.Forms.Label LB_Title_Class;
         private System.Windows.Forms.ComboBox CBB_Class;
         private System.Windows.Forms.TextBox TB_CreateClass;
         private System.Windows.Forms.Button BTN_CreateClass;
         private System.Windows.Forms.Button BTN_ToExcel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BTN_Print;
     }
 }

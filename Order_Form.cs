@@ -75,7 +75,7 @@ namespace BanDong_1._0v
         {
             Timer_Now.Start();//顯示時間開始
             Timer_SQL_Truncate.Start();//偵測是否到清除時間點
-            this.Size = new System.Drawing.Size(720, 720);//設定大小
+            this.Size = new System.Drawing.Size(700, 768);//設定大小
             using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
             {
                 cn.Open();
@@ -111,6 +111,18 @@ namespace BanDong_1._0v
         }
 
 
+        /// <summary>
+        /// 登出按鈕
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BTN_Logout_Click(object sender, EventArgs e)
+        {
+
+            Login();//先登入function
+            SaveStudent();//存取學生資料function
+            Set();//前置設定function(含今日是否訂購過)
+        }
         //------------時間管理區--------------//
         /// <summary>
         /// Timer.每日12點一到清除當日Order表
@@ -165,7 +177,7 @@ namespace BanDong_1._0v
                     if (ds.Tables["使用者"].Rows.Count > 0)
                     {
                         string insertlogs = $"insert into Logs(OrderDateTime,StudentID,StudentName,Ticket_money,Type,Remark) Values (convert(varchar, getdate(), 120),'{StudentID}','{StudentName}','{CB_PayType.Text}','{CB_BanDongType.Text}','{TB_Remark.Text}')";
-                        string insert = $"insert into Orders(Ticket_Money, StudentName, Type, Remark, OrderDateTime) Values('{CB_PayType.Text}', '{LB_StudentName.Text}', '{CB_BanDongType.Text}', '{TB_Remark.Text}', convert(varchar, getdate(), 120));";
+                        string insert = $"insert into Orders(Ticket_Money, StudentID ,StudentName, Type, Remark, OrderDateTime) Values('{CB_PayType.Text}', '{StudentID}','{StudentName}', '{CB_BanDongType.Text}', '{TB_Remark.Text}', convert(varchar, getdate(), 120));";
                         SqlDataAdapter da_buy = new SqlDataAdapter(insert, cn);
                         SqlDataAdapter da_logs = new SqlDataAdapter(insertlogs, cn);
                         da_buy.Fill(ds, "BuyBanDong");
@@ -190,6 +202,7 @@ namespace BanDong_1._0v
                 }
                 else MessageBox.Show("欄位請勿空白!");
             }
+            CloseText();
         }
 
         /// <summary>
@@ -200,7 +213,7 @@ namespace BanDong_1._0v
         private void BTN_Edit_Click(object sender, EventArgs e)
         {
             this.Refresh();
-            Size = new Size(1181, 905);
+            Size = new Size(1024, 768);
             EditVisableOpen();
             CB_PayType2.Text = CB_PayType.Text;
             CB_BanDongType2.Text = CB_BanDongType.Text;
@@ -292,9 +305,9 @@ namespace BanDong_1._0v
                 CB_BanDongType.Text = CB_BanDongType2.Text;
                 CB_PayType.Text = CB_PayType2.Text;
                 TB_Remark.Text = TB_Remark2.Text;
-                this.Size = new System.Drawing.Size(700, 720);
+                this.Size = new System.Drawing.Size(700, 768);
                 this.Refresh();
-
+                EditVisableClose();
             }
         }
 
@@ -326,7 +339,7 @@ namespace BanDong_1._0v
         /// <param name="e"></param>
         private void BTN_Cancel_Click(object sender, EventArgs e)
         {
-            this.Size = new System.Drawing.Size(700, 720);
+            this.Size = new System.Drawing.Size(700, 768);
             EditVisableClose();
         }
         /// <summary>
