@@ -15,6 +15,8 @@ namespace BanDong_1._0v
 {
     public partial class TodayOrder_Form : Form
     {
+        int A4_height = 750;
+        public delegate void SetStyle(Excel.Range rg);
         DataSet TodayOrderDataSet = new DataSet();
         DataTable dt_TodayOrders = new DataTable();
         public TodayOrder_Form()
@@ -29,7 +31,7 @@ namespace BanDong_1._0v
         /// <param name="e"></param>
         private void TodayOrder_Form_Load(object sender, EventArgs e)
         {
-            
+
             using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
             {
                 cn.Open();
@@ -44,6 +46,8 @@ namespace BanDong_1._0v
         }
 
 
+
+
         /// <summary>
         /// 匯出Excel檔案
         /// </summary>
@@ -51,31 +55,48 @@ namespace BanDong_1._0v
         /// <param name="e"></param>
         private void BTN_ToExcel_Click(object sender, EventArgs e)
         {
+            SetStyle setHeadStyle, setDateStyle,setBodyStyle;
+
             Excel.Application Excel_Orders = new Excel.Application();
             Excel_Orders.Application.Workbooks.Add(true);
             Excel_Orders.Visible = true;
-            
+            Excel.Range[] Excel_Content=new Excel.Range[28];
 
-            for (int i = 1; i <= DGV_TodayOrder.ColumnCount; i++)
+            Excel_Orders.Cells[1, 1] = "餐盒 (便當) 預定/領取登記表";
+            Excel_Orders.Cells[1, 1].ColumnWidth = 82;
+            Excel_Orders.Cells[2, 1] = $"訂購日:{LB_OrderDate.Text}\n取餐日:{LB_TakeDate.Text}\n班級:{CBB_Class.Text}";
+            Excel_Orders.Cells[2, 1].ColumnWidth = 82;
+            //for (int i = 1; i <= DGV_TodayOrder.ColumnCount; i++)
+            //{
+            //    Excel_Orders.Cells[1, 1] = "餐盒 (便當) 預定/領取登記表";
+            //    Excel_Orders.Cells[2, 1] = $"訂購日:{LB_OrderDate.Text}\n取餐日:{LB_TakeDate.Text}\n班級:{CBB_Class.Text}";
+            //}
+
+            Excel_Content[0] = (Excel.Range)Excel_Orders.Range[Excel_Orders.Cells[1, 1], Excel_Orders.Cells[1, 6]].Cells;
+            Excel_Content[0].Merge(0);
+            setHeadStyle = Style.SetHeaderStyle;
+            setHeadStyle(Excel_Content[0]);
+            //SetHeaderRangeStyle(Excel_Title);
+            //Excel_Title.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            Excel_Content[1] = (Excel.Range)Excel_Orders.Range[Excel_Orders.Cells[2, 1], Excel_Orders.Cells[2, 6]].Cells;
+            Excel_Content[1].Merge(0);
+
+            setDateStyle = Style.SetDateStyle;
+            setDateStyle(Excel_Content[1]);
+            Excel_Content[1].RowHeight = 52;
+
+            string[] TableHeaders = { "編號", "餐券票號/現金", "訂購姓名", "領取姓名", "主菜選擇", "備註" };
+            for (int i = 0; i < TableHeaders.Length; i++)
             {
-                Excel_Orders.Cells[1, 1] = "餐盒 (便當) 預定/領取登記表";
-                Excel_Orders.Cells[2, 1] = $"訂購日:{LB_OrderDate.Text} 取餐日:{LB_TakeDate.Text}\n班級:{CBB_Class.Text}";
+                Excel_Orders.Cells[3, i + 1] = TableHeaders[i];
+                Excel_Orders.Cells[3, i + 1].ColumnWidth = 82 / TableHeaders.Length;
             }
+            Excel_Content[2]=(Excel.Range)Excel_Orders.Range[Excel_Orders.Cells[3, 1], Excel_Orders.Cells[3, TableHeaders.Length]].Cells;
+            Excel_Content[2].RowHeight= 678 / 26;
+            setBodyStyle = Style.SetContextStyle;
+            setBodyStyle(Excel_Content[2]);
 
-            Excel.Range Excel_Title = (Excel.Range)Excel_Orders.Range[Excel_Orders.Cells[1, 1], Excel_Orders.Cells[1, 6]].Cells;
-            Excel_Title.Merge(0);
-            Excel_Title.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
-            Excel.Range Excel_Date = (Excel.Range)Excel_Orders.Range[Excel_Orders.Cells[2, 1], Excel_Orders.Cells[2, 6]].Cells;
-            Excel_Date.Merge(0);
-            Excel_Date.RowHeight = 52;
-
-            string[] TableHeaders = { "編號", "餐券票號/現金","訂購姓名","領取姓名","主菜選擇","備註"};
-            for(int i = 0; i < TableHeaders.Length; i++)
-            {
-                Excel_Orders.Cells[3,i+1] = TableHeaders[i];
-            }
-
-            using(SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
+            using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
             {
                 cn.Open();
                 string sql_Select = $"SELECT * FROM Orders";
@@ -85,16 +106,50 @@ namespace BanDong_1._0v
                 for (int i = 1; i <= 25; i++)
                 {
                     Excel_Orders.Cells[3 + i, 1] = i;//編號
-                    
+
                     if (i <= dt_TodayOrders.Rows.Count)
                     {
                         Excel_Orders.Cells[3 + i, 2] = dt_TodayOrders.Rows[i - 1][1].ToString();//餐票/現金
+                        Excel_Orders.Cells[3 + i, 2].ColumnWidth = 82 / DGV_TodayOrder.Columns.Count;
                         Excel_Orders.Cells[3 + i, 3] = dt_TodayOrders.Rows[i - 1][3].ToString();//訂購姓名
+                        Excel_Orders.Cells[3 + i, 3].ColumnWidth = 82 / DGV_TodayOrder.Columns.Count;
                         Excel_Orders.Cells[3 + i, 5] = dt_TodayOrders.Rows[i - 1][4].ToString();//主菜選擇
+                        Excel_Orders.Cells[3 + i, 5].ColumnWidth = 82 / DGV_TodayOrder.Columns.Count;
                         Excel_Orders.Cells[3 + i, 6] = dt_TodayOrders.Rows[i - 1][5].ToString();//備註
-                    }                    
+                        Excel_Orders.Cells[3 + i, 6].ColumnWidth = 82 / DGV_TodayOrder.Columns.Count;
+                    }
+                }
+                for(int i = 1; i <26; i++)
+                {
+                    Excel_Content[2 + i] = (Excel.Range)Excel_Orders.Range[Excel_Orders.Cells[3 + i, 1], Excel_Orders.Cells[3 + i, 6]].Cells;
+                    Excel_Content[2 + i].RowHeight= 678 / 26;
+                    setBodyStyle(Excel_Content[2 + i]);
                 }
             }
         }
+        //int[] CellWidth;
+        //int tl;
+
+        //private void btnExcel_Click(object sender, EventArgs e)
+        //{
+        //    CreateCellWidth();                              //計算欄寬於陣列及總欄寬
+        //    for (int i = 0; i < DGV_TodayOrder.Columns.Count; i++)      //A4 Size：寬約:88-90
+        //    {
+        //        CellWidth[i] = (int)(82 * CellWidth[i] * 1.0 / tl);        //寬度分配調整(數值長度改比率)                        
+        //    }
+        //    //執行該類別方法Dgv_To_Excel()
+        //}
+
+
+        //private void CreateCellWidth()                      //計算欄寬於陣列及總欄寬
+        //{
+        //    CellWidth = new int[DGV_TodayOrder.ColumnCount];
+        //    tl = 0;
+        //    for (int i = 0; i < DGV_TodayOrder.ColumnCount; i++)
+        //    {
+        //        CellWidth[i] = DGV_TodayOrder.Columns[i].Width;
+        //        tl = tl + CellWidth[i];                     //總欄寬
+        //    }
+        //}
     }
 }

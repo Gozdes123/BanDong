@@ -72,6 +72,7 @@
     <Compile Include="Register_Form.Designer.cs">
       <DependentUpon>Register_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Style.cs" />
     <Compile Include="TodayOrder_Form.cs">
       <SubType>Form</SubType>
     </Compile>
