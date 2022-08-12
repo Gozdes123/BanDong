@@ -85,7 +85,7 @@ namespace BanDong_1._0v
                 if (ds.Tables["是否已訂購"].Rows.Count > 0)
                 {
                     CB_PayType.Text = dt.Rows[0]["Ticket_Money"].ToString();
-                    CB_BanDongType.Text = dt.Rows[0]["Type"].ToString();
+                    CB_BanDongType.Text = SetCBString(dt.Rows[0]["Type"].ToString());
                     TB_Remark.Text = dt.Rows[0]["Remark"].ToString();
                     BTN_Buy.Enabled = false;
                     BTN_Edit.Enabled = true;
@@ -176,8 +176,8 @@ namespace BanDong_1._0v
                     da_search.Fill(ds, "使用者");
                     if (ds.Tables["使用者"].Rows.Count > 0)
                     {
-                        string insertlogs = $"insert into Logs(OrderDateTime,StudentID,StudentName,Ticket_money,Type,Remark) Values (convert(varchar, getdate(), 120),'{StudentID}','{StudentName}','{CB_PayType.Text}','{CB_BanDongType.Text}','{TB_Remark.Text}')";
-                        string insert = $"insert into Orders(Ticket_Money, StudentID ,StudentName, Type, Remark, OrderDateTime) Values('{CB_PayType.Text}', '{StudentID}','{StudentName}', '{CB_BanDongType.Text}', '{TB_Remark.Text}', convert(varchar, getdate(), 120));";
+                        string insertlogs = $"insert into Logs(OrderDateTime,StudentID,StudentName,Ticket_money,Type,Remark) Values (convert(varchar, getdate(), 120),'{StudentID}','{StudentName}','{CB_PayType.Text}','{SetTypeString(CB_BanDongType.Text)}','{TB_Remark.Text}')";
+                        string insert = $"insert into Orders(Ticket_Money, StudentID ,StudentName, Type, Remark, OrderDateTime) Values('{CB_PayType.Text}', '{StudentID}','{StudentName}', '{SetTypeString(CB_BanDongType.Text)}', '{TB_Remark.Text}', convert(varchar, getdate(), 120));";
                         SqlDataAdapter da_buy = new SqlDataAdapter(insert, cn);
                         SqlDataAdapter da_logs = new SqlDataAdapter(insertlogs, cn);
                         da_buy.Fill(ds, "BuyBanDong");
@@ -188,6 +188,7 @@ namespace BanDong_1._0v
                         MessageBox.Show("訂購成功!!");
                         this.Refresh();
                     }
+                    //MessageBox.Show(SetTypeString(CB_BanDongType.Text));
                 }
                 else if (CB_PayType.Text == "" && CB_BanDongType.Text != "")
                 {
@@ -203,6 +204,35 @@ namespace BanDong_1._0v
                 else MessageBox.Show("欄位請勿空白!");
             }
             CloseText();
+        }
+
+        public string SetTypeString(string txt)
+        {
+            string uncheck = "□";
+            string check = "■";
+            if (txt == "圓形")
+            {
+                txt = $"{check}圓形 {uncheck}方形";
+            }
+            else if (txt == "方形")
+            {
+                txt = $"{uncheck}圓形 {check}方形";
+            }
+            return txt;
+        }
+
+        public string SetCBString(string txt)
+        {
+            string type = txt.Substring(0, 1);
+            if (type == "■")
+            {
+                txt = "圓形";
+            }
+            else if (type == "□")
+            {
+                txt = "方形";
+            }
+            return txt;
         }
 
         /// <summary>
@@ -295,8 +325,8 @@ namespace BanDong_1._0v
             using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
             {
                 cn.Open();
-                string updatelogs = $"update Logs set Ticket_Money = '{CB_PayType2.Text}', Type = '{CB_BanDongType2.Text}', Remark='{TB_Remark2.Text}',OrderDateTime = convert(varchar, getdate(), 120) where StudentName = '{LB_StudentName.Text}'";
-                string update = $"update Orders set Ticket_Money = '{CB_PayType2.Text}', Type = '{CB_BanDongType2.Text}', Remark='{TB_Remark2.Text}',OrderDateTime = convert(varchar, getdate(), 120) where StudentName = '{LB_StudentName.Text}'";
+                string updatelogs = $"update Logs set Ticket_Money = '{CB_PayType2.Text}', Type = '{SetTypeString(CB_BanDongType2.Text)}', Remark='{TB_Remark2.Text}',OrderDateTime = convert(varchar, getdate(), 120) where StudentName = '{LB_StudentName.Text}'";
+                string update = $"update Orders set Ticket_Money = '{CB_PayType2.Text}', Type = '{SetTypeString(CB_BanDongType2.Text)}', Remark='{TB_Remark2.Text}',OrderDateTime = convert(varchar, getdate(), 120) where StudentName = '{LB_StudentName.Text}'";
                 SqlDataAdapter da_edit = new SqlDataAdapter(update, cn);
                 SqlDataAdapter da_editlogss = new SqlDataAdapter(updatelogs, cn);
                 da_edit.Fill(ds, "編輯");
