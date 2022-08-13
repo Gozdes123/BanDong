@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
 
@@ -52,6 +53,25 @@ internal class Style
         rg.Font.Name = "標楷體";
         rg.Font.Size = 12;
         rg.Interior.Color = System.Drawing.Color.White;
+    }
+
+    public static void DgvSet(DataGridView dgv)
+    {
+        DataGridViewCellStyle DgvHeaderStyle = new DataGridViewCellStyle();
+        dgv.EnableHeadersVisualStyles = false;
+        DgvHeaderStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        DgvHeaderStyle.BackColor = Color.FromArgb(191, 239, 255);
+        DgvHeaderStyle.ForeColor = Color.FromArgb(0, 0, 139);
+        DgvHeaderStyle.Font = new Font("arial", 14, FontStyle.Bold);
+        dgv.ColumnHeadersDefaultCellStyle = DgvHeaderStyle;
+
+        dgv.BackgroundColor = Color.FromArgb(255, 228, 225);
+        dgv.DefaultCellStyle.BackColor = Color.FromArgb(154, 255, 154);
+        dgv.DefaultCellStyle.Font = new Font("arial", 14, FontStyle.Bold);
+        dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(0, 255, 255);
+        dgv.AlternatingRowsDefaultCellStyle.Font = new Font("arial", 14, FontStyle.Bold);
+        //dgv.AutoResizeRows();
+        //DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader
     }
 }
 

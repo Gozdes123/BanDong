@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Excel = Microsoft.Office.Interop.Excel;
-
+//using Microsoft.Office.Interop.Excel;
 
 namespace BanDong_1._0v
 {
@@ -77,6 +77,7 @@ namespace BanDong_1._0v
             Excel_Orders.Cells[1, 1].ColumnWidth = 82;
             Excel_Orders.Cells[2, 1] = $"訂購日:{LB_OrderDate.Text}\n取餐日:{LB_TakeDate.Text}\n班級:{LB_ClassShow.Text}";
             Excel_Orders.Cells[2, 1].ColumnWidth = 82;
+            
             //for (int i = 1; i <= DGV_TodayOrder.ColumnCount; i++)
             //{
             //    Excel_Orders.Cells[1, 1] = "餐盒 (便當) 預定/領取登記表";
@@ -121,23 +122,26 @@ namespace BanDong_1._0v
                     if (i <= dt_TodayOrders.Rows.Count)
                     {
                         Excel_Orders.Cells[3 + i, 2] = dt_TodayOrders.Rows[i - 1][1].ToString();//餐票/現金
-                        Excel_Orders.Cells[3 + i, 2].ColumnWidth = 82 / DGV_TodayOrder.Columns.Count;
+                        Excel_Orders.Cells[3 + i, 2].ColumnWidth = 15;
                         Excel_Orders.Cells[3 + i, 3] = dt_TodayOrders.Rows[i - 1][3].ToString();//訂購姓名
-                        Excel_Orders.Cells[3 + i, 3].ColumnWidth = 82 / DGV_TodayOrder.Columns.Count;
+                        Excel_Orders.Cells[3 + i, 3].ColumnWidth = 12;
                         Excel_Orders.Cells[3 + i, 5] = dt_TodayOrders.Rows[i - 1][4].ToString();//主菜選擇
-                        Excel_Orders.Cells[3 + i, 5].ColumnWidth = 82 / DGV_TodayOrder.Columns.Count;
+                        Excel_Orders.Cells[3 + i, 5].ColumnWidth = 15;
                         Excel_Orders.Cells[3 + i, 6] = dt_TodayOrders.Rows[i - 1][5].ToString();//備註
-                        Excel_Orders.Cells[3 + i, 6].ColumnWidth = 82 / DGV_TodayOrder.Columns.Count;
+                        Excel_Orders.Cells[3 + i, 6].ColumnWidth = 12;
                     }
                 }
-                for(int i = 1; i <26; i++)
+                
+                for (int i = 1; i <26; i++)
                 {
                     Excel_Content[2 + i] = (Excel.Range)Excel_Orders.Range[Excel_Orders.Cells[3 + i, 1], Excel_Orders.Cells[3 + i, 6]].Cells;
-                    Excel_Content[2 + i].RowHeight= 678 / 26;
+                    Excel_Content[2 + i].RowHeight = 678 / 26;
                     setBodyStyle(Excel_Content[2 + i]);
                 }
             }
+            
         }
+<<<<<<< HEAD
 
 
         //----------------------Class區----------------------//
@@ -213,5 +217,7 @@ namespace BanDong_1._0v
         //        tl = tl + CellWidth[i];                     //總欄寬
         //    }
         //}
+=======
+>>>>>>> Git_BanDong/sid2
     }
 }
