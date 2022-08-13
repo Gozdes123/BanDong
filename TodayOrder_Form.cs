@@ -141,7 +141,6 @@ namespace BanDong_1._0v
             }
             
         }
-<<<<<<< HEAD
 
 
         //----------------------Class區----------------------//
@@ -184,15 +183,6 @@ namespace BanDong_1._0v
 
             }
         }
-        /// <summary>
-        /// 設定TB_Class_Update預設
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TB_Class_Update_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         //int[] CellWidth;
         //int tl;
 
@@ -217,7 +207,5 @@ namespace BanDong_1._0v
         //        tl = tl + CellWidth[i];                     //總欄寬
         //    }
         //}
-=======
->>>>>>> Git_BanDong/sid2
     }
 }

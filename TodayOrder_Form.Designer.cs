@@ -191,7 +191,6 @@
             this.TB_Class_Update.Size = new System.Drawing.Size(511, 35);
             this.TB_Class_Update.TabIndex = 35;
             this.TB_Class_Update.Text = "請輸入變更班級名稱";
-            this.TB_Class_Update.TextChanged += new System.EventHandler(this.TB_Class_Update_TextChanged);
             // 
             // TodayOrder_Form
             // 
