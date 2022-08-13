@@ -409,8 +409,8 @@ namespace BanDong_1._0v
         /// <param name="e"></param>
         private void BTN_Output_Click(object sender, EventArgs e)
         {
-            TodayOrder_Form todayOrder_Form = new TodayOrder_Form();
-            todayOrder_Form.Show();
+            TodayOrder_Form2 todayOrder_Form2 = new TodayOrder_Form2();
+            todayOrder_Form2.Show();
         }
     }
 }
