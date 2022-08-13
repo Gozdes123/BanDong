@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LB_Title_Order = new System.Windows.Forms.Label();
             this.LB_Title_OrderDate = new System.Windows.Forms.Label();
             this.LB_Title_TakeDate = new System.Windows.Forms.Label();
@@ -37,11 +37,11 @@
             this.LB_TakeDate = new System.Windows.Forms.Label();
             this.DGV_TodayOrder = new System.Windows.Forms.DataGridView();
             this.LB_Title_Class = new System.Windows.Forms.Label();
-            this.CBB_Class = new System.Windows.Forms.ComboBox();
-            this.TB_CreateClass = new System.Windows.Forms.TextBox();
-            this.BTN_CreateClass = new System.Windows.Forms.Button();
+            this.BTN_Class_Update = new System.Windows.Forms.Button();
             this.BTN_ToExcel = new System.Windows.Forms.Button();
             this.BTN_Print = new System.Windows.Forms.Button();
+            this.LB_ClassShow = new System.Windows.Forms.Label();
+            this.TB_Class_Update = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_TodayOrder)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,24 +98,24 @@
             // DGV_TodayOrder
             // 
             this.DGV_TodayOrder.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aquamarine;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("標楷體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_TodayOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Aquamarine;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("標楷體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_TodayOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.DGV_TodayOrder.ColumnHeadersHeight = 36;
             this.DGV_TodayOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV_TodayOrder.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_TodayOrder.DefaultCellStyle = dataGridViewCellStyle10;
             this.DGV_TodayOrder.Location = new System.Drawing.Point(18, 151);
             this.DGV_TodayOrder.Name = "DGV_TodayOrder";
             this.DGV_TodayOrder.RowTemplate.Height = 24;
@@ -132,35 +132,19 @@
             this.LB_Title_Class.TabIndex = 28;
             this.LB_Title_Class.Text = "班級：";
             // 
-            // CBB_Class
+            // BTN_Class_Update
             // 
-            this.CBB_Class.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.CBB_Class.FormattingEnabled = true;
-            this.CBB_Class.Location = new System.Drawing.Point(132, 622);
-            this.CBB_Class.Name = "CBB_Class";
-            this.CBB_Class.Size = new System.Drawing.Size(559, 39);
-            this.CBB_Class.TabIndex = 29;
-            // 
-            // TB_CreateClass
-            // 
-            this.TB_CreateClass.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TB_CreateClass.Location = new System.Drawing.Point(46, 673);
-            this.TB_CreateClass.Name = "TB_CreateClass";
-            this.TB_CreateClass.Size = new System.Drawing.Size(525, 39);
-            this.TB_CreateClass.TabIndex = 30;
-            // 
-            // BTN_CreateClass
-            // 
-            this.BTN_CreateClass.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.BTN_CreateClass.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.BTN_CreateClass.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BTN_CreateClass.Location = new System.Drawing.Point(576, 666);
-            this.BTN_CreateClass.Margin = new System.Windows.Forms.Padding(2);
-            this.BTN_CreateClass.Name = "BTN_CreateClass";
-            this.BTN_CreateClass.Size = new System.Drawing.Size(115, 50);
-            this.BTN_CreateClass.TabIndex = 31;
-            this.BTN_CreateClass.Text = "新增";
-            this.BTN_CreateClass.UseVisualStyleBackColor = false;
+            this.BTN_Class_Update.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.BTN_Class_Update.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.BTN_Class_Update.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BTN_Class_Update.Location = new System.Drawing.Point(565, 666);
+            this.BTN_Class_Update.Margin = new System.Windows.Forms.Padding(2);
+            this.BTN_Class_Update.Name = "BTN_Class_Update";
+            this.BTN_Class_Update.Size = new System.Drawing.Size(115, 50);
+            this.BTN_Class_Update.TabIndex = 31;
+            this.BTN_Class_Update.Text = "變更";
+            this.BTN_Class_Update.UseVisualStyleBackColor = false;
+            this.BTN_Class_Update.Click += new System.EventHandler(this.BTN_CreateClass_Click);
             // 
             // BTN_ToExcel
             // 
@@ -189,17 +173,37 @@
             this.BTN_Print.Text = "列印";
             this.BTN_Print.UseVisualStyleBackColor = false;
             // 
+            // LB_ClassShow
+            // 
+            this.LB_ClassShow.AutoSize = true;
+            this.LB_ClassShow.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.LB_ClassShow.Location = new System.Drawing.Point(132, 625);
+            this.LB_ClassShow.Name = "LB_ClassShow";
+            this.LB_ClassShow.Size = new System.Drawing.Size(206, 31);
+            this.LB_ClassShow.TabIndex = 34;
+            this.LB_ClassShow.Text = "尚未設定班級名稱";
+            // 
+            // TB_Class_Update
+            // 
+            this.TB_Class_Update.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.TB_Class_Update.Location = new System.Drawing.Point(46, 676);
+            this.TB_Class_Update.Name = "TB_Class_Update";
+            this.TB_Class_Update.Size = new System.Drawing.Size(511, 35);
+            this.TB_Class_Update.TabIndex = 35;
+            this.TB_Class_Update.Text = "請輸入變更班級名稱";
+            this.TB_Class_Update.TextChanged += new System.EventHandler(this.TB_Class_Update_TextChanged);
+            // 
             // TodayOrder_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.TB_Class_Update);
+            this.Controls.Add(this.LB_ClassShow);
             this.Controls.Add(this.BTN_Print);
             this.Controls.Add(this.BTN_ToExcel);
-            this.Controls.Add(this.BTN_CreateClass);
-            this.Controls.Add(this.TB_CreateClass);
-            this.Controls.Add(this.CBB_Class);
+            this.Controls.Add(this.BTN_Class_Update);
             this.Controls.Add(this.LB_Title_Class);
             this.Controls.Add(this.DGV_TodayOrder);
             this.Controls.Add(this.LB_TakeDate);
@@ -225,10 +229,10 @@
         private System.Windows.Forms.Label LB_TakeDate;
         private System.Windows.Forms.DataGridView DGV_TodayOrder;
         private System.Windows.Forms.Label LB_Title_Class;
-        private System.Windows.Forms.ComboBox CBB_Class;
-        private System.Windows.Forms.TextBox TB_CreateClass;
-        private System.Windows.Forms.Button BTN_CreateClass;
+        private System.Windows.Forms.Button BTN_Class_Update;
         private System.Windows.Forms.Button BTN_ToExcel;
         private System.Windows.Forms.Button BTN_Print;
+        private System.Windows.Forms.Label LB_ClassShow;
+        private System.Windows.Forms.TextBox TB_Class_Update;
     }
 }

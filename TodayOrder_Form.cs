@@ -15,6 +15,7 @@ namespace BanDong_1._0v
 {
     public partial class TodayOrder_Form : Form
     {
+        
         int A4_height = 750;
         public delegate void SetStyle(Excel.Range rg);
         DataSet TodayOrderDataSet = new DataSet();
@@ -38,14 +39,24 @@ namespace BanDong_1._0v
                 string sql_Select = $"SELECT OrderNO 編號, Ticket_Money [餐票/現金], StudentID 座號, StudentName 訂購姓名, Type 主菜選擇, Remark 備註 FROM Orders";
                 SqlDataAdapter dataAdapter_Select = new SqlDataAdapter(sql_Select, cn);
                 dataAdapter_Select.Fill(TodayOrderDataSet, "TodayOrders");
+
+                sql_Select = $"SELECT * FROM Class";
+                SqlCommand cmd_Select = new SqlCommand(sql_Select,cn);
+                SqlDataReader dr_Select = cmd_Select.ExecuteReader();
+                if (dr_Select.HasRows)
+                {
+                    dr_Select.Read();
+                    LB_ClassShow.Text = dr_Select["ClassName"].ToString();
+                }
+                cmd_Select.Dispose();
+                dr_Select.Close();
+                
                 cn.Close();
             }
 
             DGV_TodayOrder.DataSource = TodayOrderDataSet.Tables["TodayOrders"];
             DGV_TodayOrder.AutoResizeColumns();
         }
-
-
 
 
         /// <summary>
@@ -64,7 +75,7 @@ namespace BanDong_1._0v
 
             Excel_Orders.Cells[1, 1] = "餐盒 (便當) 預定/領取登記表";
             Excel_Orders.Cells[1, 1].ColumnWidth = 82;
-            Excel_Orders.Cells[2, 1] = $"訂購日:{LB_OrderDate.Text}\n取餐日:{LB_TakeDate.Text}\n班級:{CBB_Class.Text}";
+            Excel_Orders.Cells[2, 1] = $"訂購日:{LB_OrderDate.Text}\n取餐日:{LB_TakeDate.Text}\n班級:{LB_ClassShow.Text}";
             Excel_Orders.Cells[2, 1].ColumnWidth = 82;
             //for (int i = 1; i <= DGV_TodayOrder.ColumnCount; i++)
             //{
@@ -126,6 +137,57 @@ namespace BanDong_1._0v
                     setBodyStyle(Excel_Content[2 + i]);
                 }
             }
+        }
+
+
+        //----------------------Class區----------------------//
+
+        //
+        private void BTN_CreateClass_Click(object sender, EventArgs e)
+        {
+            string sql_Select = $"SELECT * FROM Class";
+            string sql_Inesert = $"Insert INTO Class VALUES('{TB_Class_Update.Text}')";
+            string sql_Update = $"UPDATE Class SET ClassName = '{TB_Class_Update.Text}' ";
+            using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
+            {
+                cn.Open();
+
+
+                if (LB_ClassShow.Text == "尚未設定班級名稱")
+                {
+                    SqlCommand cmd_Insert = new SqlCommand(sql_Inesert, cn);
+                    SqlDataReader dr_Insert = cmd_Insert.ExecuteReader();
+
+                    cmd_Insert.Dispose();
+                    dr_Insert.Close();
+                    LB_ClassShow.Text = TB_Class_Update.Text;
+                    MessageBox.Show("變更完成");
+                }
+                else if (TB_Class_Update.Text != "")
+                {
+                    SqlCommand cmd_Update = new SqlCommand(sql_Update, cn);
+                    SqlDataReader dr_Update = cmd_Update.ExecuteReader();
+                    dr_Update.Read();
+                    cmd_Update.Dispose();
+                    dr_Update.Close();
+                    LB_ClassShow.Text = TB_Class_Update.Text;
+                    MessageBox.Show("變更完成");
+                }
+                else
+                {
+                    MessageBox.Show("請輸入變更的班級名稱");
+                }
+
+            }
+        }
+        /// <summary>
+        /// 設定TB_Class_Update預設
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TB_Class_Update_TextChanged(object sender, EventArgs e)
+        {
+
         }
         //int[] CellWidth;
         //int tl;
