@@ -16,7 +16,8 @@ class XlsStyle
     public static void SetXlsHeadStyle(CellRange cr)
     {
         cr.Style.Font.FontName = "標楷體";
-        cr.Style.Font.Size = 16;
+        cr.Style.Font.Size = 14;
+        cr.Style.Font.IsBold = true;
         cr.Style.HorizontalAlignment = HorizontalAlignType.Center;
         cr.Borders.LineStyle = LineStyleType.Thin;
         cr.Borders[BordersLineType.DiagonalDown].LineStyle = LineStyleType.None;
@@ -29,14 +30,15 @@ class XlsStyle
     public static void SetXlsTimeStyle(CellRange cr)
     {
         cr.Style.Font.FontName = "標楷體";
-        cr.Style.Font.Size = 16;
+        cr.Style.Font.Size = 14;
+        cr.Style.Font.IsBold = true;
         cr.Style.HorizontalAlignment = HorizontalAlignType.Left;
         cr.Borders.LineStyle = LineStyleType.Thin;
         cr.Borders[BordersLineType.DiagonalDown].LineStyle = LineStyleType.None;
         cr.Borders[BordersLineType.DiagonalUp].LineStyle = LineStyleType.None;
         cr.Borders.Color = Color.Black;
         cr.ColumnWidth = 83 / 6;
-        cr.RowHeight = 70;
+        cr.RowHeight = 60;
     }
 
     public static void SetXlsBodyStyle(CellRange cr)
@@ -50,6 +52,17 @@ class XlsStyle
         cr.Borders.Color = Color.Black;
         //cr.ColumnWidth = 83 / 6;
         //cr.AutoFitColumns();
+    }
+
+    public static void SetXlsFooterStyle(CellRange cr)
+    {
+        cr.Style.Font.FontName = "標楷體";
+        cr.Style.Font.Size = 10;
+        cr.Style.HorizontalAlignment = HorizontalAlignType.Left;
+        cr.Borders.LineStyle = LineStyleType.Thin;
+        cr.Borders[BordersLineType.DiagonalDown].LineStyle = LineStyleType.None;
+        cr.Borders[BordersLineType.DiagonalUp].LineStyle = LineStyleType.None;
+        cr.Borders.Color = Color.Black;
     }
 }
 
