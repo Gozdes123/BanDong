@@ -34,3 +34,10 @@ D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1._0v.TodayOrder_Form.r
 D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1.0v.csproj.ResolveComReference.cache
 C:\C#\BanDong_1.0v\obj\Debug\BanDong_1.0v.csproj.ResolveComReference.cache
 C:\C#\BanDong_1.0v\obj\Debug\BanDong_1._0v.TodayOrder_Form.resources
+C:\C#\BanDong_1.0v\bin\Debug\Spire.Pdf.dll
+C:\C#\BanDong_1.0v\bin\Debug\Spire.XLS.dll
+C:\C#\BanDong_1.0v\bin\Debug\Microsoft.mshtml.dll
+C:\C#\BanDong_1.0v\bin\Debug\Spire.Pdf.xml
+C:\C#\BanDong_1.0v\bin\Debug\Spire.XLS.xml
+C:\C#\BanDong_1.0v\obj\Debug\BanDong_1._0v.TodayOrder_Form2.resources
+C:\C#\BanDong_1.0v\obj\Debug\BanDong_1.0v.csproj.CopyComplete
