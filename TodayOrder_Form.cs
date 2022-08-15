@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Excel = Microsoft.Office.Interop.Excel;
+using Spire.Xls;
+using System.Drawing.Printing;
+using System.IO;
 //using Microsoft.Office.Interop.Excel;
 
 namespace BanDong_1._0v
@@ -147,6 +150,8 @@ namespace BanDong_1._0v
             Excel_Orders_Footer_Range.Merge();
             Excel_Orders_Footer_Range.RowHeight = 140;
             Excel_Orders_Footer_Range.Font.Size = 10;
+
+            SqlConnect.SqlToXls();
         }
 
 
@@ -188,6 +193,36 @@ namespace BanDong_1._0v
                     MessageBox.Show("請輸入變更的班級名稱");
                 }
 
+            }
+        }
+
+        private void BTN_Print_Click(object sender, EventArgs e)
+        {
+            FileStream file_stream = new FileStream("sid.xls", FileMode.Create);//建立目的地
+            Workbook workbook = new Workbook();//
+            Worksheet Excel_Orders = workbook.Worksheets[0];
+
+            //--------------------------------
+
+            //--------------------------------
+            workbook.SaveToStream(file_stream);
+            file_stream.Close();
+            workbook.LoadFromFile(".\\sid.xls");
+            PrintDialog dialog = new PrintDialog();
+            dialog.AllowPrintToFile = true;
+            dialog.AllowCurrentPage = true;
+            dialog.AllowSomePages = true;
+            dialog.AllowSelection = true;
+            dialog.UseEXDialog = true;
+            dialog.PrinterSettings.Duplex = Duplex.Simplex;
+            dialog.PrinterSettings.FromPage = 0;
+            dialog.PrinterSettings.ToPage = 8;
+            dialog.PrinterSettings.PrintRange = PrintRange.SomePages;
+            workbook.PrintDialog = dialog;
+            PrintDocument pd = workbook.PrintDocument;
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                pd.Print();
             }
         }
         //int[] CellWidth;

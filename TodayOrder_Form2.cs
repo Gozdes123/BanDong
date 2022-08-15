@@ -34,7 +34,7 @@ namespace BanDong_1._0v
         {
 
             Workbook workbook = new Workbook();
-            workbook.LoadFromFile("C:\\C#\\winprint\\bin\\Debug\\sid.xls");
+            workbook.LoadFromFile(".\\sid.xls");
             PrintDialog dialog = new PrintDialog();
             dialog.AllowPrintToFile = true;
             dialog.AllowCurrentPage = true;

@@ -41,3 +41,10 @@ C:\C#\BanDong_1.0v\bin\Debug\Spire.Pdf.xml
 C:\C#\BanDong_1.0v\bin\Debug\Spire.XLS.xml
 C:\C#\BanDong_1.0v\obj\Debug\BanDong_1._0v.TodayOrder_Form2.resources
 C:\C#\BanDong_1.0v\obj\Debug\BanDong_1.0v.csproj.CopyComplete
+D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1._0v.TodayOrder_Form2.resources
+D:\Csharp\Program\BanDong\BanDong_1.0v\bin\Debug\Spire.Pdf.dll
+D:\Csharp\Program\BanDong\BanDong_1.0v\bin\Debug\Spire.XLS.dll
+D:\Csharp\Program\BanDong\BanDong_1.0v\bin\Debug\Microsoft.mshtml.dll
+D:\Csharp\Program\BanDong\BanDong_1.0v\bin\Debug\Spire.Pdf.xml
+D:\Csharp\Program\BanDong\BanDong_1.0v\bin\Debug\Spire.XLS.xml
+D:\Csharp\Program\BanDong\BanDong_1.0v\obj\Debug\BanDong_1.0v.csproj.CopyComplete
