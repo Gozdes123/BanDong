@@ -139,7 +139,14 @@ namespace BanDong_1._0v
                     setBodyStyle(Excel_Content[2 + i]);
                 }
             }
-            
+
+            //----------結尾備註----------//
+            string str_footer = "(一)訂餐方式：以班級為單位，採預訂方式(提供訂單預定，請於單內填寫餐券票號及訂購數量)。\n   前一日中午持預定單與餐券(或現金)向餐廳阿姨訂餐。\n(二)取餐時間：11時30分至12時30分止，逾時不候。\n(三)取餐地點：幼獅會館門口。\n(四)取餐方式：請班級幹部於訂單簽名簽收，再向餐廳幫廚阿姨領取餐盒(便當)。\n※週一訂餐數，請於前週週五完成預定。\n※餐盒(便當)均由供餐廠商於當日送來，未提前訂餐者，恕餐廳當日無法提供餐盒(便當)。";
+            Excel_Orders.Cells[29, 1] = str_footer;
+            Excel.Range Excel_Orders_Footer_Range = (Excel.Range)Excel_Orders.Range[Excel_Orders.Cells[29, 1], Excel_Orders.Cells[29, 6]].Cells;
+            Excel_Orders_Footer_Range.Merge();
+            Excel_Orders_Footer_Range.RowHeight = 140;
+            Excel_Orders_Footer_Range.Font.Size = 10;
         }
 
 
