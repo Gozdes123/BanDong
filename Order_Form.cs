@@ -78,15 +78,16 @@ namespace BanDong_1._0v
             this.Size = new System.Drawing.Size(700, 768);//設定大小
             using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
             {
+                string sql_Select = $"SELECT * FROM Orders WHERE StudentID='{StudentID}'";
                 cn.Open();
-                SqlDataAdapter da_ordered = new SqlDataAdapter($"select * from Orders where StudentID='{StudentID}'", cn);
-                da_ordered.Fill(ds, "是否已訂購");
-                DataTable dt = ds.Tables["是否已訂購"];
-                if (ds.Tables["是否已訂購"].Rows.Count > 0)
+                SqlCommand cmd_Select = new SqlCommand(sql_Select, cn);
+                SqlDataReader dr_Select = cmd_Select.ExecuteReader();
+                if (dr_Select.HasRows)
                 {
-                    CB_PayType.Text = dt.Rows[0]["Ticket_Money"].ToString();
-                    CB_BanDongType.Text = SetCBString(dt.Rows[0]["Type"].ToString());
-                    TB_Remark.Text = dt.Rows[0]["Remark"].ToString();
+                    dr_Select.Read();
+                    CB_PayType.Text = dr_Select["Ticket_Money"].ToString();
+                    CB_BanDongType.Text = dr_Select["Type"].ToString();
+                    TB_Remark.Text = dr_Select["Remark"].ToString();
                     BTN_Buy.Enabled = false;
                     BTN_Edit.Enabled = true;
                     BTN_Delete.Enabled = true;
@@ -97,8 +98,20 @@ namespace BanDong_1._0v
                     BTN_Buy.Enabled = true;
                     BTN_Edit.Enabled = false;
                     BTN_Delete.Enabled = false;
+                    OpenText();
                 }
             }
+        }
+
+
+        /// <summary>
+        /// 開啟訂餐功能function
+        /// </summary>
+        private void OpenText()
+        {
+            CB_BanDongType.Enabled = true;
+            CB_PayType.Enabled = true;
+            TB_Remark.Enabled = true;
         }
         /// <summary>
         /// 關閉訂餐功能function
@@ -108,6 +121,15 @@ namespace BanDong_1._0v
             CB_BanDongType.Enabled = false;
             CB_PayType.Enabled = false;
             TB_Remark.Enabled = false;
+        }
+        /// <summary>
+        /// 清除表內容function
+        /// </summary>
+        private void ClearText()
+        {
+            CB_BanDongType.Text = "";
+            CB_PayType.Text = "";
+            TB_Remark.Text = "";
         }
 
 
@@ -294,24 +316,7 @@ namespace BanDong_1._0v
 
             }
         }
-        /// <summary>
-        /// 清除表內容function
-        /// </summary>
-        private void ClearText()
-        {
-            CB_BanDongType.Text = "";
-            CB_PayType.Text = "";
-            TB_Remark.Text = "";
-        }
-        /// <summary>
-        /// 開啟訂餐功能function
-        /// </summary>
-        private void OpenText()
-        {
-            CB_BanDongType.Enabled = true;
-            CB_PayType.Enabled = true;
-            TB_Remark.Enabled = true;
-        }
+
 
         //------------------------編輯模式區事件---------------------------//
 

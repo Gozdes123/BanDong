@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Excel = Microsoft.Office.Interop.Excel;
 using Spire.Xls;
 using System.Drawing.Printing;
 using System.IO;

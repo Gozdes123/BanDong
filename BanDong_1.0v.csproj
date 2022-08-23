@@ -86,12 +86,6 @@
     <Compile Include="TodayOrder_Form.Designer.cs">
       <DependentUpon>TodayOrder_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="TodayOrder_Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TodayOrder_Form2.Designer.cs">
-      <DependentUpon>TodayOrder_Form2.cs</DependentUpon>
-    </Compile>
     <Compile Include="XlsStyle.cs" />
     <EmbeddedResource Include="History_Form.resx">
       <DependentUpon>History_Form.cs</DependentUpon>
@@ -116,9 +110,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TodayOrder_Form.resx">
       <DependentUpon>TodayOrder_Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TodayOrder_Form2.resx">
-      <DependentUpon>TodayOrder_Form2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
