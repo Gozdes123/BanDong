@@ -17,7 +17,7 @@ namespace BanDong_1._0v
 {
     public partial class TodayOrder_Form : Form
     {
-
+        private string Today = DateTime.Now.ToString("yyyy/MM/dd");
         //int A4_height = 750;
         DataSet TodayOrderDataSet = new DataSet();
         DataTable dt_TodayOrders = new DataTable();
@@ -33,6 +33,7 @@ namespace BanDong_1._0v
         /// <param name="e"></param>
         private void TodayOrder_Form_Load(object sender, EventArgs e)
         {
+            
 
             using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
             {
@@ -73,7 +74,7 @@ namespace BanDong_1._0v
 
             Excel_Orders.Range[1, 1].Text = "餐盒 (便當) 預定/領取登記表";
             Excel_Orders.Range[1, 1].ColumnWidth = 82;
-            Excel_Orders.Range[2, 1].Text = $"訂購日:{LB_OrderDate.Text}\n取餐日:{LB_TakeDate.Text}\n班級:{LB_ClassShow.Text}";
+            Excel_Orders.Range[2, 1].Text = $"訂購日:{Today}        取餐日: \n班級:{LB_ClassShow.Text}";
             Excel_Orders.Range[2, 1].ColumnWidth = 82;
             //for (int i = 1; i <= DGV_TodayOrder.ColumnCount; i++)
             //{
@@ -89,7 +90,7 @@ namespace BanDong_1._0v
             Excel_Time.Merge();
             XlsStyle.SetXlsTimeStyle(Excel_Time);
 
-            string[] TableHeaders = { "編號", "餐券票號/現金", "訂購姓名", "領取姓名", "主菜選擇", "備註" };
+            string[] TableHeaders = { "編號", "餐券/現金", "訂購姓名", "領取姓名", "主菜選擇", "備註" };
             for (int i = 0; i < TableHeaders.Length; i++)
             {
                 Excel_Orders.Range[3, i + 1].Text = TableHeaders[i];

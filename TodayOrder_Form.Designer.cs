@@ -32,9 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LB_Title_Order = new System.Windows.Forms.Label();
             this.LB_Title_OrderDate = new System.Windows.Forms.Label();
-            this.LB_Title_TakeDate = new System.Windows.Forms.Label();
             this.LB_OrderDate = new System.Windows.Forms.Label();
-            this.LB_TakeDate = new System.Windows.Forms.Label();
             this.DGV_TodayOrder = new System.Windows.Forms.DataGridView();
             this.LB_Title_Class = new System.Windows.Forms.Label();
             this.BTN_Class_Update = new System.Windows.Forms.Button();
@@ -65,35 +63,15 @@
             this.LB_Title_OrderDate.TabIndex = 11;
             this.LB_Title_OrderDate.Text = "訂餐日期：";
             // 
-            // LB_Title_TakeDate
-            // 
-            this.LB_Title_TakeDate.AutoSize = true;
-            this.LB_Title_TakeDate.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LB_Title_TakeDate.Location = new System.Drawing.Point(546, 83);
-            this.LB_Title_TakeDate.Name = "LB_Title_TakeDate";
-            this.LB_Title_TakeDate.Size = new System.Drawing.Size(134, 31);
-            this.LB_Title_TakeDate.TabIndex = 12;
-            this.LB_Title_TakeDate.Text = "取餐日期：";
-            // 
             // LB_OrderDate
             // 
             this.LB_OrderDate.AutoSize = true;
             this.LB_OrderDate.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.LB_OrderDate.Location = new System.Drawing.Point(152, 83);
             this.LB_OrderDate.Name = "LB_OrderDate";
-            this.LB_OrderDate.Size = new System.Drawing.Size(310, 31);
+            this.LB_OrderDate.Size = new System.Drawing.Size(148, 31);
             this.LB_OrderDate.TabIndex = 25;
-            this.LB_OrderDate.Text = "2022/08/07  上午 10:10:40";
-            // 
-            // LB_TakeDate
-            // 
-            this.LB_TakeDate.AutoSize = true;
-            this.LB_TakeDate.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LB_TakeDate.Location = new System.Drawing.Point(686, 83);
-            this.LB_TakeDate.Name = "LB_TakeDate";
-            this.LB_TakeDate.Size = new System.Drawing.Size(310, 31);
-            this.LB_TakeDate.TabIndex = 26;
-            this.LB_TakeDate.Text = "2022/08/07  上午 10:10:40";
+            this.LB_OrderDate.Text = "2022/08/07";
             // 
             // DGV_TodayOrder
             // 
@@ -117,7 +95,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV_TodayOrder.DefaultCellStyle = dataGridViewCellStyle4;
             this.DGV_TodayOrder.Location = new System.Drawing.Point(14, 121);
-            this.DGV_TodayOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DGV_TodayOrder.Margin = new System.Windows.Forms.Padding(2);
             this.DGV_TodayOrder.Name = "DGV_TodayOrder";
             this.DGV_TodayOrder.RowHeadersWidth = 51;
             this.DGV_TodayOrder.RowTemplate.Height = 24;
@@ -154,7 +132,7 @@
             this.BTN_ToExcel.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_ToExcel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BTN_ToExcel.Location = new System.Drawing.Point(719, 615);
-            this.BTN_ToExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_ToExcel.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_ToExcel.Name = "BTN_ToExcel";
             this.BTN_ToExcel.Size = new System.Drawing.Size(236, 50);
             this.BTN_ToExcel.TabIndex = 32;
@@ -168,7 +146,7 @@
             this.BTN_Print.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Print.ForeColor = System.Drawing.SystemColors.Control;
             this.BTN_Print.Location = new System.Drawing.Point(719, 668);
-            this.BTN_Print.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_Print.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Print.Name = "BTN_Print";
             this.BTN_Print.Size = new System.Drawing.Size(236, 50);
             this.BTN_Print.TabIndex = 33;
@@ -191,7 +169,7 @@
             // 
             this.TB_Class_Update.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.TB_Class_Update.Location = new System.Drawing.Point(66, 666);
-            this.TB_Class_Update.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_Class_Update.Margin = new System.Windows.Forms.Padding(2);
             this.TB_Class_Update.Name = "TB_Class_Update";
             this.TB_Class_Update.Size = new System.Drawing.Size(384, 35);
             this.TB_Class_Update.TabIndex = 35;
@@ -210,9 +188,7 @@
             this.Controls.Add(this.BTN_Class_Update);
             this.Controls.Add(this.LB_Title_Class);
             this.Controls.Add(this.DGV_TodayOrder);
-            this.Controls.Add(this.LB_TakeDate);
             this.Controls.Add(this.LB_OrderDate);
-            this.Controls.Add(this.LB_Title_TakeDate);
             this.Controls.Add(this.LB_Title_OrderDate);
             this.Controls.Add(this.LB_Title_Order);
             this.Name = "TodayOrder_Form";
@@ -228,9 +204,7 @@
 
         private System.Windows.Forms.Label LB_Title_Order;
         private System.Windows.Forms.Label LB_Title_OrderDate;
-        private System.Windows.Forms.Label LB_Title_TakeDate;
         private System.Windows.Forms.Label LB_OrderDate;
-        private System.Windows.Forms.Label LB_TakeDate;
         private System.Windows.Forms.DataGridView DGV_TodayOrder;
         private System.Windows.Forms.Label LB_Title_Class;
         private System.Windows.Forms.Button BTN_Class_Update;

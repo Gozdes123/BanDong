@@ -56,7 +56,6 @@
             this.BTN_Reset = new System.Windows.Forms.Button();
             this.BTN_Cancel = new System.Windows.Forms.Button();
             this.BTN_Confirm = new System.Windows.Forms.Button();
-            this.Timer_SQL_Truncate = new System.Windows.Forms.Timer(this.components);
             this.BTN_Logout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -380,11 +379,6 @@
             this.BTN_Confirm.Visible = false;
             this.BTN_Confirm.Click += new System.EventHandler(this.BTN_Confirm_Click);
             // 
-            // Timer_SQL_Truncate
-            // 
-            this.Timer_SQL_Truncate.Interval = 60000;
-            this.Timer_SQL_Truncate.Tick += new System.EventHandler(this.Timer_SQL_Truncate_Tick);
-            // 
             // BTN_Logout
             // 
             this.BTN_Logout.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -472,7 +466,6 @@
         private System.Windows.Forms.Button BTN_Reset;
         private System.Windows.Forms.Button BTN_Cancel;
         private System.Windows.Forms.Button BTN_Confirm;
-        private System.Windows.Forms.Timer Timer_SQL_Truncate;
         private System.Windows.Forms.Button BTN_Logout;
     }
 }

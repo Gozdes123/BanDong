@@ -38,7 +38,7 @@ class XlsStyle
         cr.Borders[BordersLineType.DiagonalUp].LineStyle = LineStyleType.None;
         cr.Borders.Color = Color.Black;
         cr.ColumnWidth = 83 / 6;
-        cr.RowHeight = 60;
+        cr.RowHeight = 48;
     }
 
     public static void SetXlsBodyStyle(CellRange cr)

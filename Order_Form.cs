@@ -38,6 +38,7 @@ namespace BanDong_1._0v
         private void Order_Form_Load(object sender, EventArgs e)
         {
             Login();//先登入function
+            TruncateOrders();//判斷是否該清除昨日資料
             SaveStudent();//存取學生資料function
             Set();//前置設定function(含今日是否訂購過)
 
@@ -58,6 +59,52 @@ namespace BanDong_1._0v
             }
         }
         /// <summary>
+        /// 判斷是否該清除昨日資料
+        /// </summary>
+        private void TruncateOrders()
+        {
+            string TodayDate = DateTime.Now.ToString("yyyyMMdd"), LastDate;
+
+            using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
+            {
+                string sql_Truncate = "TRUNCATE TABLE Orders";//清除Orders資料表
+                string sql_Select = $"SELECT * FROM Class";//查詢日期用
+                string sql_Update = $"UPDATE Class SET LastDate = '{TodayDate}'";
+
+                cn.Open();
+                SqlCommand cmd_Select = new SqlCommand(sql_Select, cn);
+                SqlDataReader dr_Select = cmd_Select.ExecuteReader();
+                dr_Select.Read();
+                if (dr_Select["LastDate"].ToString() == "")
+                {
+                    LastDate = TodayDate;//第一次使用本軟體則設最舊日期為今日
+                }
+                else
+                {
+                    LastDate = dr_Select["LastDate"].ToString();
+                }
+                cmd_Select.Dispose();
+                dr_Select.Close();
+
+                if (int.Parse(TodayDate) > int.Parse(LastDate))//判斷是否跨日
+                {
+                    SqlCommand cmd_Truncate = new SqlCommand(sql_Truncate, cn);
+                    SqlDataReader dr_Truncate = cmd_Truncate.ExecuteReader();
+                    dr_Truncate.Read();//清除Orders
+                    cmd_Truncate.Dispose();
+                    dr_Truncate.Close();
+
+                    SqlCommand cmd_Update = new SqlCommand(sql_Update, cn);
+                    SqlDataReader dr_Update = cmd_Update.ExecuteReader();
+                    dr_Update.Read();//更新最後訂餐日期
+                    cmd_Update.Dispose();
+                    dr_Update.Close();
+                }
+                cn.Close();
+            }
+
+        }
+        /// <summary>
         /// 存取學生資料function
         /// </summary>
         private void SaveStudent()
@@ -74,7 +121,6 @@ namespace BanDong_1._0v
         private void Set()
         {
             Timer_Now.Start();//顯示時間開始
-            Timer_SQL_Truncate.Start();//偵測是否到清除時間點
             this.Size = new System.Drawing.Size(700, 768);//設定大小
             using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
             {
@@ -146,27 +192,6 @@ namespace BanDong_1._0v
             Set();//前置設定function(含今日是否訂購過)
         }
         //------------時間管理區--------------//
-        /// <summary>
-        /// Timer.每日12點一到清除當日Order表
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Timer_SQL_Truncate_Tick(object sender, EventArgs e)
-        {
-            if (LB_TimeShow.Text.Substring(12, 5) == "12:00")
-            {
-                string sql_Truncate = "Truncate TABLE Orders";
-                using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
-                {
-                    cn.Open();
-                    SqlCommand cmd_Truncate = new SqlCommand(sql_Truncate, cn);
-                    SqlDataReader dataReader_Truncate = cmd_Truncate.ExecuteReader();
-                    dataReader_Truncate.Read();
-                    cmd_Truncate.Dispose();
-                    dataReader_Truncate.Close();
-                }
-            }
-        }
 
         /// <summary>
         /// Timer.時間
