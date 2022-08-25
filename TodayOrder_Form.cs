@@ -33,8 +33,7 @@ namespace BanDong_1._0v
         /// <param name="e"></param>
         private void TodayOrder_Form_Load(object sender, EventArgs e)
         {
-            
-
+            LB_OrderDate.Text = Today;
             using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
             {
                 cn.Open();
