@@ -79,7 +79,6 @@
       <DependentUpon>Register_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlConnect.cs" />
-    <Compile Include="Style.cs" />
     <Compile Include="TodayOrder_Form.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -38,21 +38,22 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(9, 168);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView2.Location = new System.Drawing.Point(12, 210);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(715, 383);
+            this.dataGridView2.Size = new System.Drawing.Size(953, 479);
             this.dataGridView2.TabIndex = 1;
             // 
             // LB_StudentID
             // 
             this.LB_StudentID.AutoSize = true;
             this.LB_StudentID.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LB_StudentID.Location = new System.Drawing.Point(104, 135);
+            this.LB_StudentID.Location = new System.Drawing.Point(139, 169);
+            this.LB_StudentID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_StudentID.Name = "LB_StudentID";
-            this.LB_StudentID.Size = new System.Drawing.Size(86, 31);
+            this.LB_StudentID.Size = new System.Drawing.Size(109, 38);
             this.LB_StudentID.TabIndex = 14;
             this.LB_StudentID.Text = "學 號 : ";
             // 
@@ -60,9 +61,10 @@
             // 
             this.LB_Title_Order.AutoSize = true;
             this.LB_Title_Order.Font = new System.Drawing.Font("標楷體", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LB_Title_Order.Location = new System.Drawing.Point(196, 35);
+            this.LB_Title_Order.Location = new System.Drawing.Point(261, 44);
+            this.LB_Title_Order.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Title_Order.Name = "LB_Title_Order";
-            this.LB_Title_Order.Size = new System.Drawing.Size(351, 37);
+            this.LB_Title_Order.Size = new System.Drawing.Size(439, 47);
             this.LB_Title_Order.TabIndex = 15;
             this.LB_Title_Order.Text = "歷 史 訂 購 紀 錄";
             // 
@@ -70,24 +72,25 @@
             // 
             this.LB_StudentName.AutoSize = true;
             this.LB_StudentName.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LB_StudentName.Location = new System.Drawing.Point(520, 135);
+            this.LB_StudentName.Location = new System.Drawing.Point(693, 169);
+            this.LB_StudentName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_StudentName.Name = "LB_StudentName";
-            this.LB_StudentName.Size = new System.Drawing.Size(86, 31);
+            this.LB_StudentName.Size = new System.Drawing.Size(109, 38);
             this.LB_StudentName.TabIndex = 16;
             this.LB_StudentName.Text = "姓 名 : ";
             // 
             // History_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(733, 561);
+            this.ClientSize = new System.Drawing.Size(977, 701);
             this.Controls.Add(this.LB_StudentName);
             this.Controls.Add(this.LB_Title_Order);
             this.Controls.Add(this.LB_StudentID);
             this.Controls.Add(this.dataGridView2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "History_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "History_Form";
