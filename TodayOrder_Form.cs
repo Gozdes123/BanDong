@@ -59,6 +59,7 @@ namespace BanDong_1._0v
             DGV_TodayOrder.DataSource = TodayOrderDataSet.Tables["TodayOrders"];
             DGV_TodayOrder.AutoResizeColumns();
             DGV_TodayOrder.Columns[5].Width = 200;
+            InsertExcel();
         }
 
 
@@ -69,7 +70,10 @@ namespace BanDong_1._0v
         /// <param name="e"></param>
         private void BTN_ToExcel_Click(object sender, EventArgs e)
         {
-
+            System.Diagnostics.Process.Start("sid.xls");
+        }
+        public void InsertExcel()
+        {
             Workbook workbook = new Workbook();
             Worksheet Excel_Orders = workbook.Worksheets[0];
 
@@ -138,9 +142,8 @@ namespace BanDong_1._0v
             FileStream file_stream = new FileStream("sid.xls", FileMode.Create);//建立目的地
             workbook.SaveToStream(file_stream);
             file_stream.Close();
-            System.Diagnostics.Process.Start("sid.xls");
-        }
 
+        }
 
         //----------------------Class區----------------------//
 
