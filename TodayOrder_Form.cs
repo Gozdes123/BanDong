@@ -58,6 +58,7 @@ namespace BanDong_1._0v
 
             DGV_TodayOrder.DataSource = TodayOrderDataSet.Tables["TodayOrders"];
             DGV_TodayOrder.AutoResizeColumns();
+            DGV_TodayOrder.Columns[5].Width = 200;
         }
 
 
