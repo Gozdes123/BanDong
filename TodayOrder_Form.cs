@@ -47,7 +47,11 @@ namespace BanDong_1._0v
                 if (dr_Select.HasRows)
                 {
                     dr_Select.Read();
-                    LB_ClassShow.Text = dr_Select["ClassName"].ToString();
+                    try
+                    {
+                        LB_ClassShow.Text = dr_Select["ClassName"].ToString();
+                    }
+                    catch { }
                 }
                 cmd_Select.Dispose();
                 dr_Select.Close();
@@ -69,8 +73,13 @@ namespace BanDong_1._0v
         /// <param name="e"></param>
         private void BTN_ToExcel_Click(object sender, EventArgs e)
         {
+            InsertExcel();
             System.Diagnostics.Process.Start("sid.xls");
         }
+
+        /// <summary>
+        /// 建立Excel檔案
+        /// </summary>
         public void InsertExcel()
         {
             Workbook workbook = new Workbook();
@@ -149,25 +158,11 @@ namespace BanDong_1._0v
         //
         private void BTN_CreateClass_Click(object sender, EventArgs e)
         {
-            string sql_Select = $"SELECT * FROM Class";
-            string sql_Inesert = $"Insert INTO Class VALUES('{TB_Class_Update.Text}')";
             string sql_Update = $"UPDATE Class SET ClassName = '{TB_Class_Update.Text}' ";
             using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
             {
                 cn.Open();
-
-
-                if (LB_ClassShow.Text == "尚未設定班級名稱")
-                {
-                    SqlCommand cmd_Insert = new SqlCommand(sql_Inesert, cn);
-                    SqlDataReader dr_Insert = cmd_Insert.ExecuteReader();
-
-                    cmd_Insert.Dispose();
-                    dr_Insert.Close();
-                    LB_ClassShow.Text = TB_Class_Update.Text;
-                    MessageBox.Show("變更完成");
-                }
-                else if (TB_Class_Update.Text != "")
+                if (TB_Class_Update.Text != "" && TB_Class_Update.Text != "尚未設定班級名稱")
                 {
                     SqlCommand cmd_Update = new SqlCommand(sql_Update, cn);
                     SqlDataReader dr_Update = cmd_Update.ExecuteReader();
@@ -185,6 +180,12 @@ namespace BanDong_1._0v
             }
         }
 
+
+        /// <summary>
+        /// 列印按鈕
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BTN_Print_Click(object sender, EventArgs e)
         {
             Workbook workbook = new Workbook();

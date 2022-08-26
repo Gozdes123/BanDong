@@ -63,13 +63,15 @@ namespace BanDong_1._0v
         /// </summary>
         private void TruncateOrders()
         {
-            string TodayDate = DateTime.Now.ToString("yyyyMMdd"), LastDate = "0";
+            string TodayDate = DateTime.Now.ToString("yyyyMMdd");
+            string LastDate = TodayDate;
 
             using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
             {
                 string sql_Truncate = "TRUNCATE TABLE Orders";//清除Orders資料表
                 string sql_Select = $"SELECT * FROM Class";//查詢日期用
                 string sql_Update = $"UPDATE Class SET LastDate = '{TodayDate}'";
+
 
                 cn.Open();
                 SqlCommand cmd_Select = new SqlCommand(sql_Select, cn);
@@ -85,7 +87,13 @@ namespace BanDong_1._0v
                 {
                     cmd_Select.Dispose();
                     dr_Select.Close();
-                    LastDate = TodayDate;//第一次使用本軟體則設最舊日期為今日
+
+                    string sql_Insert = $"INSERT INTO Class VALUES ('尚未設定班級名稱',{LastDate})";                    
+                    SqlCommand cmd_Insert = new SqlCommand(sql_Insert, cn);
+                    SqlDataReader dr_Insert = cmd_Insert.ExecuteReader();
+                    dr_Insert.Read();
+                    cmd_Insert.Dispose();
+                    dr_Insert.Close();
                 }
 
                 if (int.Parse(TodayDate) > int.Parse(LastDate))//判斷是否跨日
