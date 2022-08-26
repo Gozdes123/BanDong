@@ -176,7 +176,7 @@ namespace BanDong_1._0v
                 {
                     MessageBox.Show("請輸入變更的班級名稱");
                 }
-
+                InsertExcel();
             }
         }
 

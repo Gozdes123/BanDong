@@ -57,6 +57,14 @@
             this.BTN_Cancel = new System.Windows.Forms.Button();
             this.BTN_Confirm = new System.Windows.Forms.Button();
             this.BTN_Logout = new System.Windows.Forms.Button();
+            this.CB_Rice = new System.Windows.Forms.CheckBox();
+            this.CB_Vegetarian = new System.Windows.Forms.CheckBox();
+            this.CBB_RiceQTY = new System.Windows.Forms.ComboBox();
+            this.LB_Title_QTY = new System.Windows.Forms.Label();
+            this.LB_Title_QTY2 = new System.Windows.Forms.Label();
+            this.CBB_RiceQTY2 = new System.Windows.Forms.ComboBox();
+            this.CB_Vegetarian2 = new System.Windows.Forms.CheckBox();
+            this.CB_Rice2 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // LB_Title_Order
@@ -140,7 +148,7 @@
             this.BTN_Buy.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.BTN_Buy.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Buy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BTN_Buy.Location = new System.Drawing.Point(128, 408);
+            this.BTN_Buy.Location = new System.Drawing.Point(128, 494);
             this.BTN_Buy.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Buy.Name = "BTN_Buy";
             this.BTN_Buy.Size = new System.Drawing.Size(115, 50);
@@ -154,7 +162,7 @@
             this.BTN_Edit.BackColor = System.Drawing.Color.LightCoral;
             this.BTN_Edit.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Edit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BTN_Edit.Location = new System.Drawing.Point(271, 408);
+            this.BTN_Edit.Location = new System.Drawing.Point(271, 494);
             this.BTN_Edit.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Edit.Name = "BTN_Edit";
             this.BTN_Edit.Size = new System.Drawing.Size(115, 50);
@@ -168,7 +176,7 @@
             this.BTN_Delete.BackColor = System.Drawing.Color.Yellow;
             this.BTN_Delete.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Delete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BTN_Delete.Location = new System.Drawing.Point(414, 408);
+            this.BTN_Delete.Location = new System.Drawing.Point(414, 494);
             this.BTN_Delete.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Delete.Name = "BTN_Delete";
             this.BTN_Delete.Size = new System.Drawing.Size(115, 50);
@@ -182,7 +190,7 @@
             this.BTN_History.BackColor = System.Drawing.Color.PaleGreen;
             this.BTN_History.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_History.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BTN_History.Location = new System.Drawing.Point(128, 475);
+            this.BTN_History.Location = new System.Drawing.Point(128, 561);
             this.BTN_History.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_History.Name = "BTN_History";
             this.BTN_History.Size = new System.Drawing.Size(402, 41);
@@ -227,7 +235,7 @@
             this.BTN_Output.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BTN_Output.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Output.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BTN_Output.Location = new System.Drawing.Point(128, 534);
+            this.BTN_Output.Location = new System.Drawing.Point(128, 620);
             this.BTN_Output.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Output.Name = "BTN_Output";
             this.BTN_Output.Size = new System.Drawing.Size(402, 41);
@@ -339,7 +347,7 @@
             this.BTN_Reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.BTN_Reset.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Reset.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BTN_Reset.Location = new System.Drawing.Point(796, 408);
+            this.BTN_Reset.Location = new System.Drawing.Point(796, 494);
             this.BTN_Reset.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Reset.Name = "BTN_Reset";
             this.BTN_Reset.Size = new System.Drawing.Size(73, 50);
@@ -354,7 +362,7 @@
             this.BTN_Cancel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BTN_Cancel.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Cancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BTN_Cancel.Location = new System.Drawing.Point(873, 408);
+            this.BTN_Cancel.Location = new System.Drawing.Point(873, 494);
             this.BTN_Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Cancel.Name = "BTN_Cancel";
             this.BTN_Cancel.Size = new System.Drawing.Size(73, 50);
@@ -369,7 +377,7 @@
             this.BTN_Confirm.BackColor = System.Drawing.Color.LightCoral;
             this.BTN_Confirm.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BTN_Confirm.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BTN_Confirm.Location = new System.Drawing.Point(618, 408);
+            this.BTN_Confirm.Location = new System.Drawing.Point(618, 494);
             this.BTN_Confirm.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Confirm.Name = "BTN_Confirm";
             this.BTN_Confirm.Size = new System.Drawing.Size(120, 50);
@@ -393,12 +401,122 @@
             this.BTN_Logout.UseVisualStyleBackColor = false;
             this.BTN_Logout.Click += new System.EventHandler(this.BTN_Logout_Click);
             // 
+            // CB_Rice
+            // 
+            this.CB_Rice.AutoSize = true;
+            this.CB_Rice.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.CB_Rice.Location = new System.Drawing.Point(223, 401);
+            this.CB_Rice.Name = "CB_Rice";
+            this.CB_Rice.Size = new System.Drawing.Size(81, 35);
+            this.CB_Rice.TabIndex = 39;
+            this.CB_Rice.Text = "加飯";
+            this.CB_Rice.UseVisualStyleBackColor = true;
+            // 
+            // CB_Vegetarian
+            // 
+            this.CB_Vegetarian.AutoSize = true;
+            this.CB_Vegetarian.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.CB_Vegetarian.Location = new System.Drawing.Point(223, 442);
+            this.CB_Vegetarian.Name = "CB_Vegetarian";
+            this.CB_Vegetarian.Size = new System.Drawing.Size(81, 35);
+            this.CB_Vegetarian.TabIndex = 40;
+            this.CB_Vegetarian.Text = "素食";
+            this.CB_Vegetarian.UseVisualStyleBackColor = true;
+            // 
+            // CBB_RiceQTY
+            // 
+            this.CBB_RiceQTY.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.CBB_RiceQTY.FormattingEnabled = true;
+            this.CBB_RiceQTY.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.CBB_RiceQTY.Location = new System.Drawing.Point(309, 402);
+            this.CBB_RiceQTY.Margin = new System.Windows.Forms.Padding(2);
+            this.CBB_RiceQTY.Name = "CBB_RiceQTY";
+            this.CBB_RiceQTY.Size = new System.Drawing.Size(60, 34);
+            this.CBB_RiceQTY.TabIndex = 41;
+            this.CBB_RiceQTY.Text = "1";
+            // 
+            // LB_Title_QTY
+            // 
+            this.LB_Title_QTY.AutoSize = true;
+            this.LB_Title_QTY.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.LB_Title_QTY.Location = new System.Drawing.Point(374, 402);
+            this.LB_Title_QTY.Name = "LB_Title_QTY";
+            this.LB_Title_QTY.Size = new System.Drawing.Size(38, 31);
+            this.LB_Title_QTY.TabIndex = 42;
+            this.LB_Title_QTY.Text = "份";
+            // 
+            // LB_Title_QTY2
+            // 
+            this.LB_Title_QTY2.AutoSize = true;
+            this.LB_Title_QTY2.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.LB_Title_QTY2.Location = new System.Drawing.Point(842, 403);
+            this.LB_Title_QTY2.Name = "LB_Title_QTY2";
+            this.LB_Title_QTY2.Size = new System.Drawing.Size(38, 31);
+            this.LB_Title_QTY2.TabIndex = 46;
+            this.LB_Title_QTY2.Text = "份";
+            this.LB_Title_QTY2.Visible = false;
+            // 
+            // CBB_RiceQTY2
+            // 
+            this.CBB_RiceQTY2.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.CBB_RiceQTY2.FormattingEnabled = true;
+            this.CBB_RiceQTY2.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.CBB_RiceQTY2.Location = new System.Drawing.Point(777, 403);
+            this.CBB_RiceQTY2.Margin = new System.Windows.Forms.Padding(2);
+            this.CBB_RiceQTY2.Name = "CBB_RiceQTY2";
+            this.CBB_RiceQTY2.Size = new System.Drawing.Size(60, 34);
+            this.CBB_RiceQTY2.TabIndex = 45;
+            this.CBB_RiceQTY2.Text = "1";
+            this.CBB_RiceQTY2.Visible = false;
+            // 
+            // CB_Vegetarian2
+            // 
+            this.CB_Vegetarian2.AutoSize = true;
+            this.CB_Vegetarian2.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.CB_Vegetarian2.Location = new System.Drawing.Point(691, 443);
+            this.CB_Vegetarian2.Name = "CB_Vegetarian2";
+            this.CB_Vegetarian2.Size = new System.Drawing.Size(81, 35);
+            this.CB_Vegetarian2.TabIndex = 44;
+            this.CB_Vegetarian2.Text = "素食";
+            this.CB_Vegetarian2.UseVisualStyleBackColor = true;
+            this.CB_Vegetarian2.Visible = false;
+            // 
+            // CB_Rice2
+            // 
+            this.CB_Rice2.AutoSize = true;
+            this.CB_Rice2.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.CB_Rice2.Location = new System.Drawing.Point(691, 402);
+            this.CB_Rice2.Name = "CB_Rice2";
+            this.CB_Rice2.Size = new System.Drawing.Size(81, 35);
+            this.CB_Rice2.TabIndex = 43;
+            this.CB_Rice2.Text = "加飯";
+            this.CB_Rice2.UseVisualStyleBackColor = true;
+            this.CB_Rice2.Visible = false;
+            // 
             // Order_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.LB_Title_QTY2);
+            this.Controls.Add(this.CBB_RiceQTY2);
+            this.Controls.Add(this.CB_Vegetarian2);
+            this.Controls.Add(this.CB_Rice2);
+            this.Controls.Add(this.LB_Title_QTY);
+            this.Controls.Add(this.CBB_RiceQTY);
+            this.Controls.Add(this.CB_Vegetarian);
+            this.Controls.Add(this.CB_Rice);
             this.Controls.Add(this.BTN_Logout);
             this.Controls.Add(this.BTN_Reset);
             this.Controls.Add(this.BTN_Cancel);
@@ -467,5 +585,13 @@
         private System.Windows.Forms.Button BTN_Cancel;
         private System.Windows.Forms.Button BTN_Confirm;
         private System.Windows.Forms.Button BTN_Logout;
+        private System.Windows.Forms.CheckBox CB_Rice;
+        private System.Windows.Forms.CheckBox CB_Vegetarian;
+        private System.Windows.Forms.ComboBox CBB_RiceQTY;
+        private System.Windows.Forms.Label LB_Title_QTY;
+        private System.Windows.Forms.Label LB_Title_QTY2;
+        private System.Windows.Forms.ComboBox CBB_RiceQTY2;
+        private System.Windows.Forms.CheckBox CB_Vegetarian2;
+        private System.Windows.Forms.CheckBox CB_Rice2;
     }
 }

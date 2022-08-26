@@ -167,6 +167,9 @@ namespace BanDong_1._0v
             CB_BanDongType.Enabled = true;
             CB_PayType.Enabled = true;
             TB_Remark.Enabled = true;
+            CB_Rice.Enabled = true;
+            CB_Vegetarian.Enabled = true;
+            CBB_RiceQTY.Enabled = true;
         }
         /// <summary>
         /// 關閉訂餐功能function
@@ -176,6 +179,9 @@ namespace BanDong_1._0v
             CB_BanDongType.Enabled = false;
             CB_PayType.Enabled = false;
             TB_Remark.Enabled = false;
+            CB_Rice.Enabled = false;
+            CB_Vegetarian.Enabled = false;
+            CBB_RiceQTY.Enabled = false;
         }
         /// <summary>
         /// 清除表內容function
@@ -185,6 +191,9 @@ namespace BanDong_1._0v
             CB_BanDongType.Text = "";
             CB_PayType.Text = "";
             TB_Remark.Text = "";
+            CB_Rice.Checked = false;
+            CB_Vegetarian.Checked = false;
+            CBB_RiceQTY.Text = "1";
         }
 
 
@@ -200,6 +209,7 @@ namespace BanDong_1._0v
             SaveStudent();//存取學生資料function
             Set();//前置設定function(含今日是否訂購過)
         }
+
         //------------時間管理區--------------//
 
         /// <summary>
@@ -221,7 +231,11 @@ namespace BanDong_1._0v
         /// <param name="e"></param>
         private void BTN_Buy_Click_1(object sender, EventArgs e)
         {
-
+            string str_Remark = "";
+            string Vegetarian = IfVegetarian();
+            string Rice = IfRice();
+            string AnotherRemark = $"{Rice}{Vegetarian}";
+            str_Remark = TB_Remark.Text+ AnotherRemark;
             using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
             {
                 cn.Open();
@@ -232,8 +246,8 @@ namespace BanDong_1._0v
                     da_search.Fill(ds, "使用者");
                     if (ds.Tables["使用者"].Rows.Count > 0)
                     {
-                        string insertlogs = $"insert into Logs(OrderDateTime,StudentID,StudentName,Ticket_money,Type,Remark) Values (convert(varchar, getdate(), 120),'{StudentID}','{StudentName}','{CB_PayType.Text}','{SetTypeString(CB_BanDongType.Text)}','{TB_Remark.Text}')";
-                        string insert = $"insert into Orders(Ticket_Money, StudentID ,StudentName, Type, Remark, OrderDateTime) Values('{CB_PayType.Text}', '{StudentID}','{StudentName}', '{SetTypeString(CB_BanDongType.Text)}', '{TB_Remark.Text}', convert(varchar, getdate(), 120));";
+                        string insertlogs = $"insert into Logs(OrderDateTime,StudentID,StudentName,Ticket_money,Type,Remark) Values (convert(varchar, getdate(), 120),'{StudentID}','{StudentName}','{CB_PayType.Text}','{SetTypeString(CB_BanDongType.Text)}','{str_Remark}')";
+                        string insert = $"insert into Orders(Ticket_Money, StudentID ,StudentName, Type, Remark, OrderDateTime) Values('{CB_PayType.Text}', '{StudentID}','{StudentName}', '{SetTypeString(CB_BanDongType.Text)}', '{str_Remark}', convert(varchar, getdate(), 120));";
                         SqlDataAdapter da_buy = new SqlDataAdapter(insert, cn);
                         SqlDataAdapter da_logs = new SqlDataAdapter(insertlogs, cn);
                         da_buy.Fill(ds, "BuyBanDong");
@@ -290,6 +304,36 @@ namespace BanDong_1._0v
             }
             return txt;
         }
+        /// <summary>
+        /// 吃素判斷
+        /// </summary>
+        /// <returns></returns>
+        public string IfVegetarian()
+        {
+            if (CB_Vegetarian.Checked == true)
+            {
+                return " 素";
+            }
+            else
+            {
+                return "";
+            }
+        }
+        /// <summary>
+        /// 判斷+飯
+        /// </summary>
+        /// <returns></returns>
+        public string IfRice()
+        {
+            if (CB_Rice.Checked == true)
+            {
+                return $" 飯+{CBB_RiceQTY.Text}份";
+            }
+            else
+            {
+                return " ";
+            }
+        }
 
         /// <summary>
         /// 編輯按鈕
@@ -317,6 +361,10 @@ namespace BanDong_1._0v
             CB_BanDongType2.Visible = true;
             CB_PayType2.Visible = true;
             TB_Remark2.Visible = true;
+            CB_Rice2.Visible = true;
+            CB_Vegetarian2.Visible = true;
+            CBB_RiceQTY2.Visible = true;
+            LB_Title_QTY2.Visible = true;
             BTN_Confirm.Visible = true;
             BTN_Reset.Visible = true;
             BTN_Cancel.Visible = true;
@@ -361,11 +409,16 @@ namespace BanDong_1._0v
         /// <param name="e"></param>
         private void BTN_Confirm_Click(object sender, EventArgs e)
         {
+            string str_Remark2 = "";
+            string Rice2 = IfRice2();
+            string Vegetarian2 = IfVegetarian2();
+            string AnotherRemark2 = $"{Rice2}{Vegetarian2}";
+            str_Remark2 = TB_Remark2.Text + AnotherRemark2;
             using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
             {
                 cn.Open();
-                string updatelogs = $"update Logs set Ticket_Money = '{CB_PayType2.Text}', Type = '{SetTypeString(CB_BanDongType2.Text)}', Remark='{TB_Remark2.Text}',OrderDateTime = convert(varchar, getdate(), 120) where StudentName = '{LB_StudentName.Text}'";
-                string update = $"update Orders set Ticket_Money = '{CB_PayType2.Text}', Type = '{SetTypeString(CB_BanDongType2.Text)}', Remark='{TB_Remark2.Text}',OrderDateTime = convert(varchar, getdate(), 120) where StudentName = '{LB_StudentName.Text}'";
+                string updatelogs = $"update Logs set Ticket_Money = '{CB_PayType2.Text}', Type = '{SetTypeString(CB_BanDongType2.Text)}', Remark='{str_Remark2}',OrderDateTime = convert(varchar, getdate(), 120) where StudentName = '{LB_StudentName.Text}'";
+                string update = $"update Orders set Ticket_Money = '{CB_PayType2.Text}', Type = '{SetTypeString(CB_BanDongType2.Text)}', Remark='{str_Remark2}',OrderDateTime = convert(varchar, getdate(), 120) where StudentName = '{LB_StudentName.Text}'";
                 SqlDataAdapter da_edit = new SqlDataAdapter(update, cn);
                 SqlDataAdapter da_editlogss = new SqlDataAdapter(updatelogs, cn);
                 da_edit.Fill(ds, "編輯");
@@ -374,12 +427,45 @@ namespace BanDong_1._0v
                 CB_BanDongType.Text = CB_BanDongType2.Text;
                 CB_PayType.Text = CB_PayType2.Text;
                 TB_Remark.Text = TB_Remark2.Text;
+                CB_Rice.Checked = CB_Rice2.Checked;
+                CB_Vegetarian.Checked = CB_Vegetarian2.Checked;
+                CBB_RiceQTY.Text = CBB_RiceQTY2.Text;
                 this.Size = new System.Drawing.Size(700, 768);
                 this.Refresh();
                 EditVisableClose();
             }
         }
 
+        /// <summary>
+        /// 吃素判斷2
+        /// </summary>
+        /// <returns></returns>
+        public string IfVegetarian2()
+        {
+            if (CB_Vegetarian2.Checked == true)
+            {
+                return " 素";
+            }
+            else
+            {
+                return "";
+            }
+        }
+        /// <summary>
+        /// 判斷+飯2
+        /// </summary>
+        /// <returns></returns>
+        public string IfRice2()
+        {
+            if (CB_Rice2.Checked == true)
+            {
+                return $" 飯+{CBB_RiceQTY2.Text}份";
+            }
+            else
+            {
+                return " ";
+            }
+        }
 
         /// <summary>
         /// 編輯模式重製按鈕
@@ -398,6 +484,9 @@ namespace BanDong_1._0v
             CB_BanDongType2.Text = "";
             CB_PayType2.Text = "";
             TB_Remark2.Text = "";
+            CB_Rice2.Checked = false;
+            CBB_RiceQTY2.Text = "1";
+            CB_Vegetarian2.Checked = false;
         }
 
 
@@ -423,6 +512,10 @@ namespace BanDong_1._0v
             CB_BanDongType2.Visible = false;
             CB_PayType2.Visible = false;
             TB_Remark2.Visible = false;
+            CB_Rice2.Visible = false;
+            CB_Vegetarian2.Visible = false;
+            CBB_RiceQTY2.Visible = false;
+            LB_Title_QTY2.Visible = false;
             BTN_Confirm.Visible = false;
             BTN_Reset.Visible = false;
             BTN_Cancel.Visible = false;
