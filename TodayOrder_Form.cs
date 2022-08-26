@@ -65,7 +65,7 @@ namespace BanDong_1._0v
             InsertExcel();
         }
 
-
+        
         /// <summary>
         /// 匯出Excel檔案
         /// </summary>
@@ -73,15 +73,16 @@ namespace BanDong_1._0v
         /// <param name="e"></param>
         private void BTN_ToExcel_Click(object sender, EventArgs e)
         {
-            InsertExcel();
+            //InsertExcel();
             System.Diagnostics.Process.Start("sid.xls");
         }
-
+        
         /// <summary>
         /// 建立Excel檔案
         /// </summary>
         public void InsertExcel()
         {
+            FileStream file_stream = new FileStream("sid.xls", FileMode.Create);//建立目的地
             Workbook workbook = new Workbook();
             Worksheet Excel_Orders = workbook.Worksheets[0];
 
@@ -143,15 +144,16 @@ namespace BanDong_1._0v
             Excel_Orders.Range[29, 1].Text = str_footer;
             CellRange Excel_Orders_Footer_Range = Excel_Orders["A29:F29"];
             Excel_Orders_Footer_Range.Merge();
-            Excel_Orders_Footer_Range.RowHeight = 140;
+            Excel_Orders_Footer_Range.RowHeight = 100;
             XlsStyle.SetXlsFooterStyle(Excel_Orders_Footer_Range);
             //----------結尾備註----------//
 
-            FileStream file_stream = new FileStream("sid.xls", FileMode.Create);//建立目的地
+            
             workbook.SaveToStream(file_stream);
             file_stream.Close();
 
         }
+       
 
         //----------------------Class區----------------------//
 
@@ -176,7 +178,12 @@ namespace BanDong_1._0v
                 {
                     MessageBox.Show("請輸入變更的班級名稱");
                 }
-                InsertExcel();
+                Workbook workbook = new Workbook();
+                workbook.LoadFromFile(".\\sid.xls");
+                Worksheet Excel_Alter = workbook.Worksheets[0];
+                Excel_Alter.Range[2, 1].Text = $"訂購日:{Today}        取餐日: \n班級:{LB_ClassShow.Text}";
+                workbook.Save();
+                //Excel_Orders.Range[2, 1].Text = $"訂購日:{Today}        取餐日: \n班級:{LB_ClassShow.Text}";
             }
         }
 
