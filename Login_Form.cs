@@ -89,7 +89,7 @@ namespace BanDong_1._0v
             }
             else
             {
-                MessageBox.Show("座號或密碼請勿空白");
+                MessageBox.Show("座號或密碼請勿空白白癡");
                 return false;
             }
         }
