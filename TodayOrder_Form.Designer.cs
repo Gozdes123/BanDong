@@ -124,7 +124,7 @@
             this.BTN_Class_Update.TabIndex = 31;
             this.BTN_Class_Update.Text = "變更";
             this.BTN_Class_Update.UseVisualStyleBackColor = false;
-            this.BTN_Class_Update.Click += new System.EventHandler(this.BTN_CreateClass_Click);
+            this.BTN_Class_Update.Click += new System.EventHandler(this.BTN_Class_Update_Click);
             // 
             // BTN_ToExcel
             // 

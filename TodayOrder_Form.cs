@@ -67,7 +67,7 @@ namespace BanDong_1._0v
 
         
         /// <summary>
-        /// 匯出Excel檔案
+        /// 匯出Excel檔案(開啟檔案)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -157,8 +157,12 @@ namespace BanDong_1._0v
 
         //----------------------Class區----------------------//
 
-        //
-        private void BTN_CreateClass_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 變更班級&儲存檔案
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BTN_Class_Update_Click(object sender, EventArgs e)
         {
             string sql_Update = $"UPDATE Class SET ClassName = '{TB_Class_Update.Text}' ";
             using (SqlConnection cn = new SqlConnection(Login_Form.sqlcn))
@@ -186,7 +190,6 @@ namespace BanDong_1._0v
                 //Excel_Orders.Range[2, 1].Text = $"訂購日:{Today}        取餐日: \n班級:{LB_ClassShow.Text}";
             }
         }
-
 
         /// <summary>
         /// 列印按鈕
